@@ -1,1 +1,0 @@
-from MapImager import MapImager
