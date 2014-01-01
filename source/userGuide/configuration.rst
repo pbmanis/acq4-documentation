@@ -121,6 +121,7 @@ Here, *ModuleName* must refer to one of the modules defined in the directory **l
 Note in this example that the name 'Camera' is used 3 times to refer to 3 different things: 1) the name of the preconfigured module that will appear in the Manager user interface, 2) the name of the python module to load (ie, acq4.modules.Camera), and 3) the name of the camera device that should be used by this module when it is loaded.
 
 
+.. _userConfigurationDevices:
 
 Devices Configuration
 '''''''''''''''''''''
