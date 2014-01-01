@@ -21,7 +21,7 @@ Notes and Logs
 
 
 
-.. _user-metaarray-files:
+.. _userMetaArrayFiles:
     
 MetaArray Files
 ---------------

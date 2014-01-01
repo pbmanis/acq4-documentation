@@ -1,6 +1,6 @@
 .. _userModulesPatch:
 
-The Patch Module
+The Patch module
 ================
 
 This module is used to assist in patching cells and to monitor cell health throughout the experiment. It provides a few basic functions:
@@ -28,7 +28,7 @@ The patch module acquires data from a single patch clamp device, which is specif
 For an example of a typical patch experiment using this module, see the :ref:`patching tutorial <userTutorialsPatching>`.
 
 
-Stimulus Controls
+Stimulus controls
 -----------------
 
 When the Patch module is running, it repeatedly outputs a square pulse waveform to the patch clamp amplifier while recording from its electrode signal. The clamp mode, pulse shape, and timing are all configured in the set of controls labeled "Stimulus control" in the figure above.
@@ -73,7 +73,7 @@ Typically, the experimenter will want to change these settings multiple times ov
 To begin recording, click the **Start** button. The command waveform and electrode recording signals are displayed in the right-side panels. Any of the settings described above may be changed at any time during the experiment. 
 
 
-Patch Analysis
+Patch analysis
 --------------
 
 For each recording, the Patch module calculates the access resistance, input resistance, resting membrane potential (or holding current), and cell capacitance. This is done by fitting the decay of the charging transient to a single-exponential function [1]_. To see the fit that is being computed for each recording, check the **Draw fit** box. 
