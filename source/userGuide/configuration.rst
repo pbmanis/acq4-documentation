@@ -18,10 +18,10 @@ It is important to first understand that a 'configuration' is a single document,
     
 ::
     
-    storageDir: "/home/luke/data"
+    storageDir: "/home/user/data"
     protocolDir: "config/protocols"
     
-In the example above, the name "storageDir" is assigned the value "/home/luke/data".
+In the example above, the name "storageDir" is assigned the value "/home/user/data".
 Values may also contain nested lists of name:value pairs:
     
 ::
@@ -60,7 +60,6 @@ When ACQ4 first starts, it reads a single configuration from **config/default.cf
 ::
     
     storageDir: "storage/dir" 
-    protocolDir: "config/protocols"
     modules:
         ...
     devices:
@@ -70,7 +69,7 @@ When ACQ4 first starts, it reads a single configuration from **config/default.cf
     configurations:
         ...
         
-In this format, the storageDir specifies the *default* location where data should be stored when no other location is specified. The protocolDir specifies the location where protocols designed in the Protocol Runner module are stored. All other sections are discussed below:
+In this format, the storageDir specifies the *default* location where data should be stored when no other location is specified. All other sections are discussed below:
     
 .. _userConfigurationModules:
 
@@ -97,6 +96,12 @@ Here, *ModuleName* must refer to one of the modules defined in the directory **l
         Data Manager:
             module:  'DataManager'
             shortcut: 'F2'
+        Task Runner:
+            module: 'TaskRunner'
+            shortcut: 'F6'
+            config:
+                ## Directory where Task Runner stores its saved tasks.
+                taskDir: 'config/example/tasks'
         Camera:
             module:  'Camera'
             shortcut: 'F5'
@@ -112,9 +117,6 @@ Here, *ModuleName* must refer to one of the modules defined in the directory **l
             shortcut: 'F4'
             config:
                 clampDev: 'Clamp2'
-        Protocol Runner:
-            shortcut: 'F6'
-            module: 'ProtocolRunner'
 
 Note in this example that the name 'Camera' is used 3 times to refer to 3 different things: 1) the name of the preconfigured module that will appear in the Manager user interface, 2) the name of the python module to load (ie, acq4.modules.Camera), and 3) the name of the camera device that should be used by this module when it is loaded.
 

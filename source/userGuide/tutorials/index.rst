@@ -13,5 +13,6 @@ Tutorials
     TroubleshootVibration
     TroubleshootNoise
     PhotostimMapping
+    CalciumImaging
     MosaicBuilding
     PhotostimAnalysis

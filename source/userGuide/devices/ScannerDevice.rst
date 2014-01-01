@@ -89,8 +89,8 @@ The scanner can be used to simulate a shutter by directing the laser to a beam b
 If you use this make sure that when in the "off" position the laser is directed onto an absorbant surface (please use common sense). Use the X and Y boxes to designate the voltage to use for the "off" position. The shutter can be 'opened' and 'closed' using the button that reads either 'Open Shutter' or 'Close Shutter'.
 
 
-Protocol Runner Interface
----------------------------
+Task Runner Interface
+-----------------------
 
 To include the scanner in a protocol, first mark the Scanner check box in the list of devices. This should bring up the Scanner's protocol interface.
 

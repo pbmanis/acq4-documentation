@@ -1,3 +1,5 @@
+.. _userTutorialsTroubleshootingVibration:
+
 Troubleshooting Table Vibration
 ===============================
 

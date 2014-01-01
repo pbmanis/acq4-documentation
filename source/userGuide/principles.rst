@@ -1,7 +1,10 @@
 Principles of Operation
 =======================
 
-As experimenters, we are faced with a constantly evolving set of tools, techniques, and goals. Inspiration often comes out of the blue, or suddenly in the middle of an experiment. The central goals of ACQ4 are to 1) make it as easy and fast as possible to design and execute a new type of experiment while 2) allowing established experiments to become streamlined and efficient.
+
+
+
+Recommended reading: Campagnola et al., 2014. 
 
 Overview
 --------

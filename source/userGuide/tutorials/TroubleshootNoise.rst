@@ -1,3 +1,5 @@
+.. _userTutorialsTroubleshootingNoise:
+
 Troubleshoot Electrical Noise
 =============================
 
