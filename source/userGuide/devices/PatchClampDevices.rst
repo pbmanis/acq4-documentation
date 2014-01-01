@@ -1,3 +1,5 @@
+.. _userDevicesPatchClamp:
+
 Patch-Clamp Amplifiers
 ======================
 

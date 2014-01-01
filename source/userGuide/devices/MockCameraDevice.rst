@@ -1,3 +1,5 @@
+.. _userDevicesMockCamera:
+    
 Simulated Cameras
 =================
 

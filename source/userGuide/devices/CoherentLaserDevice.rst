@@ -1,3 +1,5 @@
+.. _userDevicesCoherentLaser:
+    
 Coherent ultrafast lasers
 =========================
 

@@ -1,3 +1,5 @@
+.. _userDevicesStage:
+
 Movable Stages
 ==============
 

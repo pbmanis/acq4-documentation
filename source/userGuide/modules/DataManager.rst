@@ -1,4 +1,4 @@
-.. _userModulesDataManager
+.. _userModulesDataManager:
 
 The Data Manager Module
 =======================
@@ -38,7 +38,7 @@ In the default.cfg file you also need to specify folderTypes. We usually do this
 folderTypes.cfg
 +++++++++++++++
 
-The folderTypes config file specifies the special types of folders you may want to use to store your data. We currently have folders for Days, Slices, Cells, Sites, and Pairs. These are completely modifiable and it is easy to add new types. In a Data Manager these types are available under the New.... drop down menu. Each of the types has it's own fields to fill in, making it easy to make meta data uniform. Specify folder types like so (each keyword under info appears as a field):
+The folderTypes config file specifies the special types of folders you may want to use to store your data. We currently have folders for Days, Slices, Cells, Sites, and Pairs. These are completely modifiable and it is easy to add new types. In a Data Manager these types are available under the New.... drop down menu. Each of the types has it's own fields to fill in, making it easy to make meta data uniform. Specify folder types like so (each keyword under info appears as a field)::
 
     Day:                    
         name: "%Y.%m.%d"            

@@ -1,3 +1,5 @@
+.. _userDevicesQImagingCameras:
+
 QImaging Cameras
 ================
 

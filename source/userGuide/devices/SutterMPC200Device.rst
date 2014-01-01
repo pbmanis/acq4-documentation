@@ -1,3 +1,5 @@
+.. _userDevicesSutterMPC200:
+
 Sutter MPC200 motorized stage controller
 ========================================
 

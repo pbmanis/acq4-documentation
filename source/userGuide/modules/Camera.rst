@@ -1,3 +1,5 @@
+.. _userModulesCamera:
+
 The Camera Module
 =================
 

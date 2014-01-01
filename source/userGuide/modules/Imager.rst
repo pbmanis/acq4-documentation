@@ -1,2 +1,4 @@
+.. _userModulesImager:
+    
 Imager Module
 =============

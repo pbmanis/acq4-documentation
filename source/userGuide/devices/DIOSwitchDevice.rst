@@ -1,3 +1,5 @@
+.. _userDevicesDIOSwitch:
+    
 Digital Switch 
 ==============
 

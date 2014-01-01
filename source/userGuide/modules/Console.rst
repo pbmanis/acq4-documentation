@@ -1,2 +1,4 @@
+.. _userModulesConsole:
+
 Console Module
 ==============

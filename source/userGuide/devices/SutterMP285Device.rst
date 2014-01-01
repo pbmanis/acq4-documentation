@@ -1,10 +1,14 @@
+.. _userDevicesSutterMP285:
+
 Sutter MP285 Devices
 ====================
 
 Sutter MP-285 stage and manipulator controllers. NOTE--The MP-285 has a design
 flaw: if you turn an attached ROE while the computer is communicating with the
 controller, then the controller will crash. This can be circumvented with 
-custom interfacing hardware (see lib/drivers/SutterMP285/mp285_hack).
+custom interfacing hardware (see lib/drivers/SutterMP285/mp285_hack). If 
+possible, it is recommended to use the :ref:`MPC-200 <userDevicesSutterMPC200>` 
+instead.
 
 
 

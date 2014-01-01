@@ -1,3 +1,5 @@
+.. _userDevicesPhotometricsCameras:
+
 Photometrics Cameras
 ====================
 

@@ -1,3 +1,5 @@
+.. _userDevicesNiDAQ:
+
 NiDAQ Devices
 =============
 

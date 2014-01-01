@@ -1,3 +1,5 @@
+.. _userDevicesSerialMouse:
+
 Serial Mouse Devices
 ====================
 

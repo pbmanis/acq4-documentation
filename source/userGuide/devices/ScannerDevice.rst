@@ -1,3 +1,5 @@
+.. _userDevicesScanner:
+
 Scanner Devices
 ==========================
 

@@ -1,3 +1,5 @@
+.. _userDevicesMultiClamp:
+
 MultiClamp Devices
 ==================
 

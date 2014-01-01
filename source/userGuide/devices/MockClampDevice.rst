@@ -1,3 +1,5 @@
+.. _userDevicesMockClamp:
+
 Simulated Patch Clamp Amplifier
 ================================
 

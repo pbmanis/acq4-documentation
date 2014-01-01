@@ -1,3 +1,5 @@
+.. _userDevicesMicroscope:
+    
 Microscope Devices
 ==================
 
