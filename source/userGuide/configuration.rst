@@ -1,3 +1,5 @@
+.. _userConfiguration:
+
 Configuration
 =============
 
@@ -105,8 +107,6 @@ Here, *ModuleName* must refer to one of the modules defined in the directory **l
         Camera:
             module:  'Camera'
             shortcut: 'F5'
-            config:
-                camDev: 'Camera'
         Patch Clamp 1:
             module: 'Patch'
             shortcut: 'F3'
@@ -137,6 +137,8 @@ The format for defining a device is:
 Here, *deviceType* refers to one of the devices defined in the directory **lib/devices** (examples: NiDAQ, MultiClamp, Microscope). The contents of *config* will depend on the device, and are described in the documentation for that device type (see :ref:`userDevices`). Refer to the example configurations in **config/backups**.
 
 
+.. _userConfigurationFolderTypes:
+
 FolderTypes Configuration
 '''''''''''''''''''''''''
 
@@ -158,7 +160,22 @@ Here, *UniqueName* is the name that will appear in the Data Manager module list 
     fieldName1: 'text', number_of_lines
     fieldName2: 'list', ['option1', 'option2', 'option3']
     
-For either field type, information will be stored as plain text. If the field type is *list*, then the user will see a drop-down menu of options to choose from (although it will still be possible to type in any arbitrary response). If the field type is *text*, then the user will simply see an empty text box to type in.
+For either field type, information will be stored as plain text. If the field type is *list*, then the user will see a drop-down menu of options to choose from (although it will still be possible to type in any arbitrary response). If the field type is *text*, then the user will simply see an empty text box to type in. 
+
+The following is a complete example of a folder type used to contain all data collected for a single day. The metadata fields for this folder type represent aspects of the experiment that are expected to be constant for the entire day::
+
+    Day:                    
+        name: "%Y.%m.%d"  # folder will be named YYYY.MM.DD
+        info:
+            description: "text", 6          
+            species: "list", ["C57 Mouse", "CBA Mouse", "Rat"]
+            age: "string" 
+            sex: "list", ['M', 'F']
+            weight: "string"
+            temperature: "list", ['34C', '25C', '37C']
+            solution: "list", ["Standard ACSF", "Physiological ACSF"]
+
+For further reference, see the file config/example/folderTypes.cfg in the ACQ4 distribution.
 
 
 Configurations Configuration

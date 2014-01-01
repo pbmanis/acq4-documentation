@@ -3,89 +3,80 @@
 The Data Manager Module
 =======================
 
-The Data Manager provides an interface to browse through data. Use it to:
+The Data Manager module allows the user to browse, view, and export data, view experiment logs, and manage annotations and other meta-data. Additionally, this module is used to specify the default storage location for data during an experiment. To streamline experiment execution, all modules record data into this default directory rather than prompting the user for a location. 
 
-    * Create new folders and specify where data should be saved during aquisition.
-    * Browse through and annotate data that has been collected.
-    * Access analysis modules.
+For large studies, keeping data properly annotated and organized consistently is both essential and time consuming. The Data Manager encourages consistent, hierarchical organization of data by allowing the user to define a set of directory types, each having its own set of meta-data fields. These fields may be configured by the user at the beginning of a series of experiments to encourage the user to store and annotate data with a consistent organization. During an experiment, the user simply indicates key transitions such as placing a new sample on the microscope or patching a new cell. The data manager uses these transitions to construct a hierarchy of directories which organize the experimental data and prompt the user to supply the necessary meta-data. For more information on this topic, see the :ref:`data organization tutorial <userTutorialsDataOrganization>`.
+    
+.. figure:: images/dataManager.png
+    :align: center
+    
+
 
 Configuration
 -------------
 
-There are two important config files for the Data Manager: default.cfg and folderTypes.cfg.
-
-default.cfg
-+++++++++++
-
-While this is the main configuration file for the Acq4 Manager module, it has important implications for the Data Manager. These are the default Storage Directory, and the configurations. You can create different configurations for each user, or for each way of accessing data (for example, data that is on an internal harddrive vs. an external drive).
-
-Specify the default storage directory (the directory that Data Manager will open up to if no individual configurations are selected) by giving a directory path after the key::
-
-    storageDir: "\C:\Documents\Data\junk"
+Although the Data Manager module does not accept any configuration options of its own, it must (like all modules) appear in the :ref:`modules section <userConfigurationModules>` of the configuration::
     
-If you have multiple users, we recommend setting the default to a communnal folder, and giving each user their own configuration, like so::
-
-    configurations:
-        Luke:
-            storageDir: "c:\\Documents\Luke"
-        Megan:
-            storageDir: "c:\\Documents\Megan"
-            
-In the default.cfg file you also need to specify folderTypes. We usually do this by pulling in a separate folderTypes config file::
-
-    folderTypes: readConfigFile('folderTypes.cfg')
+    modules:
+        Data Manager:
+            module: 'Data Manager'
+            shortcut: 'F2'
     
-folderTypes.cfg
-+++++++++++++++
+The Data Manager does make use of some :ref:`system-wide configuration <userConfiguration>` settings. Most importantly, a base storage directory must be specified either on the command line using the ``-b`` flag or in the configuration::
 
-The folderTypes config file specifies the special types of folders you may want to use to store your data. We currently have folders for Days, Slices, Cells, Sites, and Pairs. These are completely modifiable and it is easy to add new types. In a Data Manager these types are available under the New.... drop down menu. Each of the types has it's own fields to fill in, making it easy to make meta data uniform. Specify folder types like so (each keyword under info appears as a field)::
+    storageDir: "C:\\Documents\\Data"
 
-    Day:                    
-        name: "%Y.%m.%d"            
-        info:
-            description: "text", 6          
-            species: "list", ["CBA Mouse", "DBA Mouse", "Rat"] 
-            age: "string" 
-            sex: "list", ['M', 'F']
-            weight: "string"
-            temperature: "list", ['34C', '25C', '37C']
-            solution: "list", ["Standard ACSF", "Physiological ACSF"]
-
-Each folder type needs to have a name and info. The name can be a date (like in the Day folder) or it can simply be "slice" or "cell". When the folder is created a three digit specifier will be added to the name, so in one Day folder you could have multiple subfolders, for example: slice_000, slice_001 and slice_002. 
-
-Within info you can specify any number of fields that will always appear when you create a new folder of that type. There are 3 types of fields: "text", "string", and "list". 
-
-    * "text" and "string": Both create an empty field where text can be entered. (LUKE! How are these different and what do the numbers after them mean?)
-    * "list": Creates a drop down menu where the user can select any of the items that are listed in the brackets. The user is not limited to the items in the list, they will also have the option of typing in whatever they like. 
+This specifies the top-level directory from which the module will be allowed to create new sub-directories for storing data. The Data Manager module also uses the :ref:`'folderTypes' configuration settings <userConfigurationFolderTypes>` to determine what folder types the user may create, and what default metadata fields they will be given.
+    
 
 .. _userModulesDataManagerStorageDirectory:
 
-Acquisition
------------
 
-During acquisition you will use the Data Manager to specify where your data is stored and annotate the data as you collect it. 
+Acquired data storage
+---------------------
 
-The top-level directory is shown at the top. Everything that is in this directory will appear in the file list on the left side of the window. The Data Manager opens to the top-level directory that is specified in the default.cfg file. To (temporarily) change the top-level directory, click the "..." button. 
+During most data acquisition, modules will not prompt the user for a location to store data in. Instead, modules communicate with the Data Manager, which specifies a current storage directory set previously by the user. Before acquiring any data, the user must select the desired storage folder in the Data Manager, and then click the **Set** button to the right of **Storage Directory**. The current storage directory will be highlighted red.
 
-By default, no storage directory is set. When you create a new folder (of any type) that folder becomes the storage directory. To set a storage directory without creating a new folder (for example after restarting the program during the middle of an experiment) select the storage directory that you want in the list on the left. Then click "Set". The path to that folder should appear in the Storage Directory box.
 
 Creating new folders
-++++++++++++++++++++
+--------------------
 
-We usually create folders in a hierarchy starting with Day, then Slice, then Cell, Pair or Site. Because of this hierarchy, folders of different types will automatically be created within the previous folder. For example, the Slice folder will be created within the Day folder, and the Cell folder will be created within the Slice folder. However, when you create two folders of the same type, they will be created at the same hierarchical level. For example, if you patch multiple cells within one slice, after creating the first Cell folder (cell_000), when you create a new Cell (cell_001) folder it will be created within the slice folder. If you switch slices and create a new slice folder, it will be created within the Day folder. The order of the hierarchy is determined by the order that you first create folders in. If you first create a Day folder, then a Cell folder, then a Slice folder, the slice folder will be created within the Cell folder which will be created within the Day folder. 
+Users are encouraged to store experimental results in a hierarchical folder structure that best organizes ther data (see the :ref:`data organization tutorial <userTutorialsDataOrganization>`). To facilitate this, the Data Manager module includes a drop-down list of user-defined folder types that may be created at any time. When a folder type is selected from this list, a new folder is created and the current storage directory is set to this location. The location where the folder is created depends on the structure of folder types created previously:
 
-Annotating and Log
-++++++++++++++++++
+* If the current storage directory has the same type as the new folder to be created, then the new folder is created as sibling of the current storage directory (that is, both the current storage directory and the newly created folder will exist within the same parent directory).
+* Likewise, if the *parent* or *grandparent* of the current storage directory has the same type as the folder to be created, then the new folder is created as a sibling of either the parent or grandparent. 
+* Otherwise, the new folder is created *within* the current storage directory. 
 
-In addition to specific fields, each folder type and each data file have a Notes field. Here notes can be made about the data in the folder - for example you might note that a Cell was slightly depolarized, or looked like a dendrite had been cut. You can enter information into the notes field at any time, so you can also put notes about analysis here. 
+Folders are named using the naming rule specified in the configuration for that folder type, followed by a numerical identifier "_XXX" that increments to avoid creating duplicate names.
 
-There is also a way to create notes about the entire day using the log. On startup the Log should appear at the bottom of the Data Manager. Log entries are timestamped, so are useful for noting things that affect the whole experiment from then on, like adding drugs to solution. To access the log after the experiment click on the Log tab.
+For example, suppose we define three folder types for storing data in slice electrophysiology experiments: 'Day', 'Slice', and 'Cell'. For each Day, there will be one or more Slices, and for each Slice there will be one or more Cells. If we create new folders in the following order: [Day, Slice, Cell, Cell, Slice, Cell, Cell], then they will be automatically organized into the following structure:
+    
+    Day/
+        Slice_000/
+            Cell_000/
+            Cell_001/
+        Slice_001/
+            Cell_000/
+            Cell_001/
+            
 
-Analysis
---------
+Annotations
+-----------
 
-The Data Manager is also the gateway for getting to the Analysis modules. To access analysis modules, click on the Analysis tab. Some of the modules (ex: PhotoStim) require you to have a database specified. Acq4 analysis currently uses sqlite databases. You can create an sqlite database by clicking "Create" or select a previously existing sqlite database by clicking "Open". I'm not sure what "Refresh" does LUKE????.
+Each folder type defines a specific set of metadata fields which should be automatically added to the folder upon creation. After creating a folder, the **Info** tab in the Data Manager module can be used to access and edit this metadata.
 
-Data Model is used as a translation step between the data and the analysis. It basically takes data collected from any setup and organizes it so that the Analysis modules can make sense of it. For example, voltage traces on different rigs might by saved as "Clamp1.ma" or as "Axopatch.ma" and have different metadata depending on which device was used. Data Model will recognize both of these files as voltage traces and allow the Analysis software to interact with them both. However, creating new Data Models or adjusting them to fit any system currently requires some knowledge of python programming. If you need help with this, ask Luke.
+.. figure:: images/dataManagerFolderInfo.png
+    :align: center
 
-Different analysis modules are accessed through the drop down menu on the right. Most of these analysis modules are still in development, so you should expect them to change frequently for the next while. 
+In addition, *all* files are automatically given a "Notes" field which may be used to provide annotations. Individual modules are also free to add extra metadata fields to any files or folders. 
+
+Logging
+-------
+
+During data acquisition, a log directory may be selected in which system event messages will be appended to a ".log" file. This typically includes information about when tasks are started or stopped and any error messages that may have been generated. Logs may be viewed later by opening the **Log** tab in the Data Manager module.
+
+Data display
+------------
+
+The **Data** tab is used to display the contents of individual data files. Although some file types require specialized analysis modules to view, most data collected consists of 2D images, 3D image stacks, or 2D signal-vs-time recordings. Each of these may be displayed via the Data Manager. 
+

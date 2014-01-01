@@ -14,6 +14,16 @@ The display area of the Camera module serves as a visual representation of the g
 
 On systems with access to stage position information, the Camera module will track the current stage position and update the virtual coordinate space accordingly. This allows, for example, marking the location of specific cells or sites in the preparation, configuring large, multi-part photostimulation maps, and building large image mosaics which are displayed behind the camera feed. For systems with multiple microscope objectives, the ability to build such mosaics provides a persistent, low-magnification view of the sample, allowing the experimenter to navigate around the sample under high magnification without switching objectives. Likewise, photostimulation patterns may be arranged over large, arbitrary areas outside the visible range of the camera sensor.
 
+Configuration
+-------------
+
+Although the Camera module does not accept any configuration options of its own, it must (like all modules) appear in the :ref:`modules section <userConfigurationModules>` of the configuration::
+    
+    modules:
+        Camera:
+            module:  'Camera'
+            shortcut: 'F5'
+    
     
 Recording dock
 --------------
