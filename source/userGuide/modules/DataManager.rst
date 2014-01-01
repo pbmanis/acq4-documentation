@@ -1,3 +1,5 @@
+.. _userModulesDataManager
+
 The Data Manager Module
 =======================
 

@@ -1,7 +1,9 @@
+.. _userDevicesCamera:
+    
 Camera Devices
 ==============
 
-In ACQ4, a Camera can be any device used for collecting image data. Currently this includes support for Photometrics and Q-Imaging cameras, but other types of imaging devices (such as laser scanning imaging hardware) may be included in the future. A simulated camera device is also included for testing.
+In ACQ4, a Camera can be any device used for collecting image data. Currently this includes support for Photometrics and Q-Imaging cameras. A simulated camera device is also included for testing purposes. In the future, this device class may expand to include scanning laser imaging as well (currently, this is supported through a set of user interface modules instead).
 
 Cameras support the following features:
 

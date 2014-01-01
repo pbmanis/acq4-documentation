@@ -1,3 +1,5 @@
+.. _userModulesTaskRunner:
+
 The Protocol Runner Module
 ==========================
 

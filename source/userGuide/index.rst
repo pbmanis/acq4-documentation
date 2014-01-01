@@ -12,6 +12,7 @@ Contents:
     hardware
     installation
     configuration
+    capabilities
     modules/index
     devices/index
     dataManagement

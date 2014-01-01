@@ -1,9 +1,9 @@
 Manager
 =======
 
-.. autoclass:: lib.Manager.Manager
+.. autoclass:: acq4.Manager.Manager
     :members:
 
-    .. automethod:: lib.Manager.Manager.__init__
+    .. automethod:: acq4.Manager.Manager.__init__
 
 

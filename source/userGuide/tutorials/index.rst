@@ -7,6 +7,7 @@ Tutorials
     
     PatchCell
     RecordIVCurve
+    DataOrganization
     CalibrateScanner
     CalibrateObjectives
     TroubleshootVibration

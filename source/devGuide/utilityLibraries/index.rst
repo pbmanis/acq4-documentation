@@ -6,7 +6,7 @@ Contents:
 .. toctree::
     :maxdepth: 2
     
-    pyqtgraph
+..  pyqtgraph
     metaarray
     functions
     debug

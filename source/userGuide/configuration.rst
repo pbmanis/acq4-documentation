@@ -72,6 +72,8 @@ When ACQ4 first starts, it reads a single configuration from **config/default.cf
         
 In this format, the storageDir specifies the *default* location where data should be stored when no other location is specified. The protocolDir specifies the location where protocols designed in the Protocol Runner module are stored. All other sections are discussed below:
     
+.. _userConfigurationModules:
+
 Modules Configuration
 '''''''''''''''''''''
 

@@ -6,7 +6,7 @@ Contents:
 .. toctree::
     :maxdepth: 2
     
-    DAQGeneric
+..  DAQGeneric
     NiDAQ
     Camera
     MultiClamp

@@ -11,6 +11,8 @@ Contents:
     Camera
     Patch
     ProtocolRunner
+    Imager
+    Console
 
 What is a Module?
 -----------------

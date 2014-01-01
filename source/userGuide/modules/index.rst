@@ -6,8 +6,10 @@ Modules
     
     Manager
     DataManager
+    TaskRunner
     Camera
     Patch
-    ProtocolRunner
+    Imager
+    Console
     
     
