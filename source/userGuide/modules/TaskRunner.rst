@@ -78,7 +78,7 @@ The task settings dock shows a list of the devices that may be included in the t
 .. figure:: images/taskRunnerDevices.png
     :align: center
 
-*Selecting devices:* To include a device in the task, check the box next to the device. For each device that is checked, the Task interface for that device will appear in the lower space of the window. You can include any number of devices in the task. Docks may be rearranged and stacked by dragging their title bars.
+*Selecting devices:* To include a device in the task, check the box next to the device. For each device that is checked, the Task interface for that device will appear in the lower space of the window. The behavior of the task interface for each device is described in :ref:`the device documentation <userDevices>`. Any number of devices may be included in the task. Docks may be rearranged and stacked by dragging their title bars.
 
 * **Duration** Sets the desired length of one trial of the task. 
 * **Lead Time** This forces the task system to reserve the selected hardware for the duration specified before running the task. This is useful, for example, for allowing a patch clamp amplifier to settle after switching modes and before making a recording.
