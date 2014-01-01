@@ -58,6 +58,8 @@ Within info you can specify any number of fields that will always appear when yo
     * "text" and "string": Both create an empty field where text can be entered. (LUKE! How are these different and what do the numbers after them mean?)
     * "list": Creates a drop down menu where the user can select any of the items that are listed in the brackets. The user is not limited to the items in the list, they will also have the option of typing in whatever they like. 
 
+.. _userModulesDataManagerStorageDirectory:
+
 Acquisition
 -----------
 

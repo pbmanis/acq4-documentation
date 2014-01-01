@@ -73,20 +73,15 @@ Typically, the experimenter will want to change these settings multiple times ov
 To begin recording, click the **Start** button. The command waveform and electrode recording signals are displayed in the right-side panels. Any of the settings described above may be changed at any time during the experiment. 
 
 
-Parameter Measurements
-----------------------
+Patch Analysis
+--------------
 
-For each recording, the Patch module calculates the access resistance, input resistance, resting membrane potential (or holding current), and cell capacitance [1]_
+For each recording, the Patch module calculates the access resistance, input resistance, resting membrane potential (or holding current), and cell capacitance. This is done by fitting the decay of the charging transient to a single-exponential function [1]_. To see the fit that is being computed for each recording, check the **Draw fit** box. 
 
+To display a time plot of each analysis parameter, click the check box adjacent to the parameter name (see the 'Analysis control' section in the figure above). These plots are used to monitor seal resistance during patching and to monitor access resistance, resting membrane potential, and other cell health-related parameters during the course of an experiment. To clear this plot data in between cells, click **Reset History**.
 
-The software automatically calculates a fit to the trace collected in each of the modes. From this fit it calulates 
-parameters of the cell, electrode or patch. By default the fit that is calculated is displayed with the patch recording 
-as a blue line. To speed things up you can turn off the drawing of this fit by unchecking Draw Fit. If you do this the 
-fit and parameters will still be calculated, just not drawn.
+As long as the **Record** button is depressed, all analyzed parameters are stored to a 'Patch' folder in the currently selected :ref:`storage directory <userModulesDataManagerStorageDirectory>`. Note that when **Record** is first clicked, the entire history of analysis results is written into this folder; thus it is important to click **Reset History** between cells to avoid recording patch data from one cell into the storage directory for another cell.
 
-All of the parameters will be calulated (and saved if record is pressed). You can plot one or more of the parameters in the
-bottom plot window by selecting the check box next to the parameter. You can reset the plot by clicking Reset History. Whenever
-you press record, data for all the time that is in the plot window is saved, and incoming data is also saved. 
 
 .. [1] Santos-Sacchi, 1993. Voltage-dependent Ionic Conductances of Type I Spiral Ganglion Cells from the Guinea Pig Inner Ear. J Neurosci. 1993 Aug;13(8)
 
