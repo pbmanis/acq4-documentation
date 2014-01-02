@@ -23,3 +23,5 @@ Configuration for this device is very simple. Note that a single 'NiDAQ' device 
 TaskRunner Interface
 --------------------
 
+.. figure:: images/nidaqTaskInterface.png
+    :align: center
