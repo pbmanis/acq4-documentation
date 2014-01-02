@@ -12,6 +12,7 @@ Contents:
     hardware
     installation
     configuration
+    coordinateSystem
     capabilities
     modules/index
     devices/index
