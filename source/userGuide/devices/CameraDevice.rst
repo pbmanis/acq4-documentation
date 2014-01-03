@@ -70,6 +70,13 @@ The following is an example camera configuration:
 Manager Interface
 -----------------
 
+.. figure:: images/Camera_ManagerInterface.png
+    :align: center
+
+.. _userDevicesCameraTaskInterface:
 
 Task Runner Interface
 ---------------------
+
+.. figure:: images/Camera_TaskInterface.png
+    :align: center

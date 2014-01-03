@@ -35,3 +35,5 @@ Manager Interface
 
 Task Runner Interface
 ---------------------
+
+The task interface for QCam devices is the same as for :ref:`generic camera devices<userDevicesCameraTaskInterface>`.

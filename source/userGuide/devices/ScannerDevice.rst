@@ -60,6 +60,9 @@ This process is somewhat complex and requires that the user ensure the hardware 
 
 To achieve these requirements, it is common to configure the camera to use binning and to operate over a restricted region of interest. When the camera is configured with all appropriate settings, click the "Store Camera Config" button in the manager interface. All calibrations from then on will load these camera settings before starting and restore the original settings afterward.
 
+.. figure:: images/Scanner_ManagerInterface.png
+    :align: center
+
 When all hardware is configured correctly, do the following to start a calibration:
 
 #. Select the laser and camera to be calibrated in the manager interface
@@ -112,12 +115,28 @@ stimulating multiple locations within the same trace. But not yet.....
 Whenever there is a scanner protocol interface open, a pink target spot will appear in the selected camera. This pink spot is a test
 spot and will be stimulated whenever Test Single or Record Single is clicked. 
 
+.. figure:: images/Scanner(withStimulationGrid)_TaskInterface.png
+    :align: center
+
 To add targets that will be stimulated in sequence click Add Grid or Add Point. Add Grid will add a grid of points to the camera window. You can adjust the position of this grid in the camera window. To translate the grid click in the middle of the grid and drag. To rotate the grid, click and drag on of the circular handles on the corner of the grid. And to scale the grid, click and drag one of the square handles. You can add as many grids and points to a protocol sequence as you like. If you do not want to use a grid or point during a protocol sequence, you can either uncheck it in the Items list, or you can select it in the Items list and delete it by clicking Delete. 
 
 Active target points will appear in green by default. If they are selected in the item list they will appear in light pink. Use this to identify which spots to delete/uncheck.
+
+.. figure:: images/Scanner(withStimulationGrid,CameraModule)_TaskInterface.png
+    :align: center
 
 If you want a grid (perhaps over the area around a cell) but have an area that you don't want to stimulate (for example where an electrode is over the slice) you can add an Occlusion. You can adjust the location of the corners of the occlusion by dragging any of the corner handles, and you can translate the occlusion by clicking and dragging it by the middle. Any points whose centers fall within the occlusion will be removed from the target list (and appear in dark grey in the camera window). 
 
 Total Time displays the time that the computer calculates it will take to run the scan. I have found this to not be particularly accurate.
 
 If you close the scanner protocol interface (for example, to open a different protocol) all the Target items and occlusions that you have added will be saved, and will reappear when you open another Scanner interface. This is very helpful for switching between scanning protocols where you want to stimulate the same spots. 
+
+Defining Scan Programs
+++++++++++++++++++++++
+
+.. figure:: images/Scanner(withProgramControls)_TaskInterface.png
+    :align: center
+
+
+.. figure:: images/Scanner(withProgramControls,CameraModule)_TaskInterface.png
+    :align: center

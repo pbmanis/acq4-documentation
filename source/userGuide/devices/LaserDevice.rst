@@ -47,6 +47,13 @@ Example configuration:
 Manager Interface
 -----------------
 
+.. figure:: images/LaserUV_ManagerInterface.png
+    :align: center
+
 
 Task Runner Interface
 ---------------------
+
+.. figure:: images/LaserUV_TaskInterface.png
+    :align: center
+
