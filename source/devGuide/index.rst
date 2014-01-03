@@ -1,22 +1,24 @@
 Developer's Guide
 =================
 
+(coming soon: more developers guide!)
+
 Contents:
 
 .. toctree::
     :maxdepth: 2
     
     introduction
-    overview
-    dependencies
-    conventions
-    internalStructure
-    dataManager
-    deviceDrivers
-    devices/index
+    _overview
+    _dependencies
+    _conventions
+    _internalStructure
+    _dataManager
+    _deviceDrivers
+    _devices/index
     modules/index
-    utilityLibraries/index
-    fileTypes
-    analysis
+    _utilityLibraries/index
+    _fileTypes
+    _analysis
     debugging
-    APIReference/index
+    _APIReference/index
