@@ -8,7 +8,6 @@ Contents:
     
     introduction
     principles
-    quickstart
     hardware
     installation
     configuration
