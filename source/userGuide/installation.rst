@@ -29,15 +29,15 @@ There are two basic methods of installing ACQ4 on windows:
 2. Prepare a complete python distribution. This is preferred if you plan to develop new code within ACQ4. All packages must match the version (2.7) and architecture (32 or 64bit) of the python version to be installed.
 
     * Download and install packages in order:
-        * Python 2.7 (www.python.org/download)
-        * PyQt4 4.10 (www.riverbankcomputing.com/software/pyqt/download)
-        * NumPy-MKL 1.7 (http://www.lfd.uci.edu/~gohlke/pythonlibs/)
-        * SciPy 0.13 (http://www.lfd.uci.edu/~gohlke/pythonlibs/)
-        * h5py 2.2 (http://www.lfd.uci.edu/~gohlke/pythonlibs/)
-        * Pillow 2.3 (http://www.lfd.uci.edu/~gohlke/pythonlibs/)
-        * pyserial 2.7 (http://www.lfd.uci.edu/~gohlke/pythonlibs/)
-        * PyOpenGL 3.0 (http://www.lfd.uci.edu/~gohlke/pythonlibs/)
-        * PyParsing 2.0 (http://www.lfd.uci.edu/~gohlke/pythonlibs/)
+        * Python 2.7 (http://www.python.org/download)
+        * PyQt4 4.10 (http://www.riverbankcomputing.com/software/pyqt/download)
+        * NumPy-MKL 1.7 (http://www.lfd.uci.edu/~gohlke/pythonlibs/#numpy)
+        * SciPy 0.13 (http://www.lfd.uci.edu/~gohlke/pythonlibs/#scipy)
+        * h5py 2.2 (http://www.lfd.uci.edu/~gohlke/pythonlibs/#h5py)
+        * Pillow 2.3 (http://www.lfd.uci.edu/~gohlke/pythonlibs/#pillow)
+        * pyserial 2.7 (http://www.lfd.uci.edu/~gohlke/pythonlibs/#pyserial)
+        * PyOpenGL 3.0 (http://www.lfd.uci.edu/~gohlke/pythonlibs/#pyopengl)
+        * PyParsing 2.0 (http://www.lfd.uci.edu/~gohlke/pythonlibs/#pyparsing)
     * Install git (www.git-scm.com), then clone the acq4 repository::
         
             git cone https://github.com/acq4/acq4.git
