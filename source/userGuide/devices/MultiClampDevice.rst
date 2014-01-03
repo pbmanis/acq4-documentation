@@ -75,6 +75,11 @@ will be pronted which lists the available device strings.
 Manager Interface
 -----------------
 
+.. figure:: images/Multiclamp_ManagerInterface.png
+    :align: center
 
 Task Runner Interface
 ---------------------
+
+.. figure:: images/Multiclamp_TaskInterface.png
+    :align: center

@@ -28,6 +28,9 @@ Example configuration:
 Manager Interface
 -----------------
 
+.. figure:: images/DigitalSwitch_ManagerInterface.png
+    :align: center
+
 
 Task Runner Interface
 ---------------------

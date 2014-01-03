@@ -40,3 +40,6 @@ Manager Interface
 
 Task Runner Interface
 ---------------------
+
+.. figure:: images/MockClamp_TaskInterface.png
+    :align: center

@@ -46,6 +46,11 @@ Photometrics cameras support all features provided by the basic Camera device cl
 Manager Interface
 -----------------
 
+.. figure:: images/Camera_ManagerInterface.png
+    :align: center
+
 
 Task Runner Interface
 ---------------------
+
+The task interface for PVCam devices is the same as for :ref:`generic camera devices<userDevicesCameraTaskInterface>`. 
