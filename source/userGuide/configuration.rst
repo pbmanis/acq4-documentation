@@ -5,13 +5,22 @@ Configuration
 
 Configuring ACQ4 involves editing '.cfg' files in the *config* directory. In these files, you may define:
     
-    * The devices in your system
-    * The list of loadable modules 
-    * Data storage locations
-    * Per-user configurations
+* The devices in your system
+* The list of loadable modules 
+* Data storage locations
+* Per-user configurations
     
-The easiest way to get started might be to look in the **config/backups** directory at examples of the .cfg files from other systems.
-    
+When ACQ4 is started, it first checks to see whether a configuration file has been specified on the command line using the ``-b`` flag. Next, it searches through the following paths looking for a 'default.cfg' file:
+
+* ACQ4_package_root/config/
+* ACQ4_package_root/../config/
+* /etc/acq4   (unless running on Windows)
+* ACQ4_package_root/config/example/
+* ACQ4_package_root/../config/example/
+
+The last two paths in the list are possible locations of example configuration files included with ACQ4. The example configuration contains examples of every kind of device supported in ACQ4. Most of these entries are disabled in the configuration; the active devices can be run without any hardware to demonstrate the capabilities of ACQ4. 
+
+The fastest way to get started with a fresh installation is to run ACQ4 (by running ``python -m acq4`` or ``acq4`` or by clicking a shortcut, depending on your method of installation). If ACQ4 is running from an example configuration, a message will be displayed giving the location of this configuration. Copy all files from this location into its parent 'config' directory, and begin editing (a source code editor is very helpful here).
 
 .cfg File Syntax
 ----------------
