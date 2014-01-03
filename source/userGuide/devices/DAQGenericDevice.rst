@@ -27,6 +27,7 @@ Example configuration for controlling a laser Q-switch and shutter via two digit
                 type: 'do'
                 holding: 0
     
+.. _userDevicesDAQGenericAxoProbeExample:
 
 Example AxoProbe 1A configuration:
 

@@ -42,8 +42,8 @@ will be pronted which lists the available device strings.
             vcHolding: -50e-3
             icHolding: 0.0
             settings:  # Default amplifier state. The amplifier will be 
-                    # reconfigured with these options every time ACQ4 is 
-                    # started. 
+                       # reconfigured with these options every time ACQ4 is 
+                       # started. 
                 IC:
                     HoldingEnable: False
                     Holding: 0.0
@@ -72,11 +72,12 @@ will be pronted which lists the available device strings.
                     OutputZeroEnable: False
                     LeakSubEnable: False
 
-Manager Interface
------------------
 
-.. figure:: images/Multiclamp_ManagerInterface.png
-    :align: center
+..    Manager Interface
+..    -----------------
+..
+..    .. figure:: images/Multiclamp_ManagerInterface.png
+..        :align: center
 
 Task Runner Interface
 ---------------------

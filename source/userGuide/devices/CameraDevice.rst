@@ -3,7 +3,11 @@
 Camera Devices
 ==============
 
-In ACQ4, a Camera can be any device used for collecting image data. Currently this includes support for Photometrics and Q-Imaging cameras. A simulated camera device is also included for testing purposes. In the future, this device class may expand to include scanning laser imaging as well (currently, this is supported through a set of user interface modules instead).
+Support for scientific cameras currently includes all devices which use either PVCam (Photometrics) or QCam (Q-Imaging) drivers. Cameras support live-imaging modes as well as controlled data acquisition modes that specify the timing and behavior of the device. In live-imaging mode, the camera collects frames freely and sends them to a user-interface module for display. This mode is generally used for visualizing the preparation throughout the experiment including while navigating and during placement of electrodes for stimulating or patching. Cameras may also make use of connections to data acquisition channels. During task execution, the camera may be triggered by the data acquisition board or serve as the starting trigger for another device. 
+
+In addition, many cameras export a TTL signal that indicates the timing of frame exposures. When it is recorded, this signal is analyzed to determine starting exposure time of each camera frame, allowing the precise synchronization of imaging and electrophysiology or other signals. Image data is stored to disk alongside the raw exposure and trigger signals, and the time values of each frame are stored as meta-data. The result is that physiological recordings made synchronously with imaging can be automatically registered temporally during analysis.
+
+Cameras are treated by ACQ4 as optomechanical devices, and thus may be calibrated such that their size, position, and orientation have a fixed spatial relationship to any other optomechanical devices. This is most commonly used with both a motorized stage for position feedback and a microscope device which defines per-objective scaling and offset. With a properly configured system, image mosaics can be collected and automatically reconstructed.
 
 Cameras support the following features:
 
@@ -70,8 +74,23 @@ The following is an example camera configuration:
 Manager Interface
 -----------------
 
+The :ref:`Manager user interface <userModulesManagerDevices>` for cameras typically consists of a simple list of parameters which define the current state of the camera. A standard set of parameters are available for all types of camera, including:
+    
+* **triggerMode** determines how the camera will decide when to begin frame exposures. Values are:
+    
+    * **Normal** a software signal begins frame acquisition, and the camera automatically determines when each frame exposure occurs.
+    * **TriggerStart** a hardware trigger initiates frame exposure, and the camera automatically determines when each subsequent frame exposure occurs.
+    * **Strobe** a hardware trigger initiates each frame exposure. The length of exposures is set by the **exposure** parameter.
+    * **Bulb** A hardware trigger initiates each frame exposure, and the length of the TTL pulse determines the exposure time for each frame.
+    
+* **exposure** the current per-frame exposure time
+* **binning** the number of sensor pixels that should be binned together to produce one output pixel. 
+* **region** sets the region of interest on the sensor. Using a smaller region can result in faster frame transfer from the camera.
+
 .. figure:: images/Camera_ManagerInterface.png
     :align: center
+    
+Each camera driver implements extra parameters depending on the features available on the camera.
 
 .. _userDevicesCameraTaskInterface:
 

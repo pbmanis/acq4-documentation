@@ -17,6 +17,8 @@ Loadable module list
 On the left is a list of user interface modules which may be loaded. Each entry in this list corresponds to an entry in the :ref:`modules section <userConfigurationModules>` of the configuration. Double-clicking on an entry creates a new instance of that module. Most modules may be loaded multiple times, although some modules will refuse to instantiate more than once.
 
 
+.. _userModulesManagerDevices:
+    
 Device control area
 -------------------
 
