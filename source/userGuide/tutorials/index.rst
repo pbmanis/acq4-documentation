@@ -6,13 +6,13 @@ Tutorials
     :maxdepth: 2
     
     PatchCell
-    RecordIVCurve
+    _RecordIVCurve
     DataOrganization
-    CalibrateScanner
-    CalibrateObjectives
+    _CalibrateScanner
+    _CalibrateObjectives
     TroubleshootVibration
     TroubleshootNoise
-    PhotostimMapping
-    CalciumImaging
-    MosaicBuilding
-    PhotostimAnalysis
+    _PhotostimMapping
+    _CalciumImaging
+    _MosaicBuilding
+    _PhotostimAnalysis

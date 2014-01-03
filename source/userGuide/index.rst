@@ -12,11 +12,11 @@ Contents:
     installation
     configuration
     coordinateSystem
-    capabilities
+    _capabilities
     modules/index
     devices/index
     dataManagement
-    analysis/index
+    _analysis/index
     tutorials/index
 
 
