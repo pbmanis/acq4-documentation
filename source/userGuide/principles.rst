@@ -1,21 +1,22 @@
 Principles of Operation
 =======================
 
-
-
-
-Recommended reading: Campagnola et al., 2014. 
-
 Overview
 --------
 
-The ACQ4 user interface is broken up into *modules*. Each module is designed for a particular task such as viewing live camera streams or browsing through previously recorded data. Modules may communicate with one another or operate completely independently. At the core of ACQ4 is an object called the *Manager*. The Manager's most important tasks are to 1) keep track of the *devices* configured in the system and 2) coordinate and synchronize the actions of the modules as they interact with the devices.
+ACQ4 is both a platform for application development and a suite of modules built on that platform. At the core of ACQ4 is a central Manager that controls access to devices, executes tasks that synchronize the actions of multiple devices, manages the storage and retrieval of data, and loads user interface modules (Figure 1). Each user interface module provides a specific functions such as camera access, synchronized recording and device control, data browsing, and various analysis tasks. These modules make use of the services provided by the Manager, allowing them to communicate with one another.
+
+In most cases, user interface modules control the acquisition hardware indirectly by submitting task requests to the Manager. These task requests specify which devices will participate in the task and describe the intended actions for each device. The manager then handles all aspects of device configuration and synchronization, while ensuring that tasks submitted by different modules do not attempt to access the same hardware simultaneously. This is one of the most important services provided by the Manager because it simplifies the creation of new acquisition modules and at the same time encourages scalability. For situations that require low-level access to the hardware, modules may instead request direct access from the Manager.
+
+The data management system in ACQ4 is designed to emphasize flexibility and longevity. Data is organized into a hierarchy of directories with user-defined structure. Each directory contains a human readable index file that stores annotations and other metadata related to both the directory and any files contained within it. Most data acquired by ACQ4 is stored using the HDF5 file format (www.hdfgroup.org). These files contain both the raw data arrays, for example from camera and digitized recordings, as well as meta-information related to the recordings. ACQ4 provides libraries for reading these files in both Python and MATLAB. When the data is analyzed, the results may be stored in an SQLite relational database file (www.sqlite.org). The use of industry-standard HDF5 and SQLite formats helps to ensure that data is readable by a variety of different applications, both now and in the future. 
+
+
 
 
 Manager
 -------
 
-The Manager is the central object in ACQ4. It is used mainly to initialize devices, launch new modules, inquire about existing modules and devices, and configure hardware for running synchronized protocols. The Manager is not visible to the user, but it is nevertheless helpful to understand that it exists and that it is working behind the scenes to make sure everything runs together smoothly. 
+The Manager is the central object in ACQ4. It is used mainly to initialize devices, launch new modules, inquire about existing modules and devices, and configure hardware for running synchronized tasks. The Manager is not visible to the user, but it is nevertheless helpful to understand that it exists and that it is working behind the scenes to make sure everything runs together smoothly. 
 
 Devices
 -------
@@ -26,19 +27,19 @@ A *device*, as discussed in this documentation, refers either to a single physic
 Modules
 -------
 
-A *module* is a single, independently functioning user interface. Each module has its own window and can be opened/closed without affecting other modules. By default, ACQ4 starts by displaying the *manager module*. As you might guess, this is a user interface to the :term:`Manager` itself, from which you can launch new modules and interact directly with devices in the system. Other modules include:
+A *module* is a single, independently functioning user interface. Each module has its own window and can be opened/closed without affecting other modules. By default, ACQ4 starts by displaying the *manager module*. As you might guess, this is a user interface to the Manager itself, from which you can launch new modules and interact directly with devices in the system. Other modules include:
     
 * Camera - live streaming and recording of video
 * Patch - for monitoring progress in cell patching and long-term cell health
-* Protocol Runner - the workhorse for designing and running protocols
+* Task Runner - the workhorse for designing and running tasks
 * Data Manager - for organizing and browsing data, also the access point for analysis modules [link]
 
-Protocols
----------
+Tasks
+-----
 
-A *protocol* is a set of instructions issued to a group of devices all at once. For example, making a 1-second voltage clamp recording might involve 1) configuring the amplifier to switch to voltage clamp mode with a particular holding potential and 2) configuring the ADC to record on the correct channel for 1 second. A more complicated protocol might involve a voltage clamp recording synchronized with a camera recording, a laser flash, and a specific set of scanning mirror commands, while recording temperature. Any module may request that the Manager run a protocol on its behalf, and the Manager makes sure these requests do not collide--two protocols using the same hardware may not run at the same time.
+A *task* is a set of instructions issued to a group of devices all at once. For example, making a 1-second voltage clamp recording might involve 1) configuring the amplifier to switch to voltage clamp mode with a particular holding potential and 2) configuring the ADC to record on the correct channel for 1 second. A more complicated task might involve a voltage clamp recording synchronized with a camera recording, a laser flash, and a specific set of scanning mirror commands, while recording temperature. Any module may request that the Manager run a task on its behalf, and the Manager makes sure these requests do not collide--two tasks using the same hardware may not run at the same time.
 
-The Protocol Runner module is designed to allow fast and easy prototyping of protocols. It provides a graphical interface allowing the user to select which devices are to be included in the protocol and to configure each device.
+The Task Runner module is designed to allow fast and easy prototyping of tasks. It provides a graphical interface allowing the user to select which devices are to be included in the task and to configure each device.
 
 Data Handling
 -------------
