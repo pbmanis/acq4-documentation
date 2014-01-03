@@ -42,7 +42,7 @@ There are two basic methods of installing ACQ4 on windows:
         
             git cone https://github.com/acq4/acq4.git
             
-    * To start ACQ4, run `python -m acq4` from the source directory, or install with `python setup.py install`
+    * To start ACQ4, run ``python -m acq4`` from the source directory, or install with ``python setup.py install``
 
 
 Linux Installation
@@ -50,7 +50,8 @@ Linux Installation
 
 Linux users should install the python dependencies from their distribution's package manager. For example::
 
-    $ sudo apt-get install python-qt4 python-qt4-gl python-qt4-sql python-pyserial python-scipy python-pyparsing python-h5py python-imaging git python2.7-dev
+    $ sudo apt-get install python-qt4 python-qt4-gl python-qt4-sql python-pyserial\
+      python-scipy python-pyparsing python-h5py python-imaging git python2.7-dev
     
 Next, clone the ACQ4 code::
     
@@ -62,7 +63,7 @@ Or if you prefer, install from pypi::
     
 If you wish to develop modules / devices / analysis, you will probably need a few more packages: qt4-designer pyqt4-dev-tools
 
-To start ACQ4 run::
+To start ACQ4, run::
     
     $ python -m acq4
     
