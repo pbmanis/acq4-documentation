@@ -24,7 +24,7 @@ Windows Installation
 
 There are two basic methods of installing ACQ4 on windows:
     
-1. Download one of the .exe installers from `www.acq4.org`_; these contain a complete python distribution with all of the packages listed below. This is the quickest way to get running if you do not plan on developing new code within ACQ4. To start ACQ4, simply navigate to the entry in the start menu.
+1. Download one of the .exe installers from `www.acq4.org <http://www.acq4.org>`_; these contain a complete python distribution with all of the packages listed below. This is the quickest way to get running if you do not plan on developing new code within ACQ4. To start ACQ4, simply navigate to the entry in the start menu.
 
 2. Prepare a complete python distribution. This is preferred if you plan to develop new code within ACQ4. All packages must match the version (2.7) and architecture (32 or 64bit) of the python version to be installed.
 
@@ -51,7 +51,7 @@ Linux Installation
 Linux users should install the python dependencies from their distribution's package manager. For example::
 
     $ sudo apt-get install python-qt4 python-qt4-gl python-qt4-sql python-pyserial\
-      python-scipy python-pyparsing python-h5py python-imaging git python2.7-dev
+      python-scipy python-pyparsing python-h5py python-imaging python-opengl git
     
 Next, clone the ACQ4 code::
     
@@ -72,6 +72,6 @@ To start ACQ4, run::
 OSX Installation
 ----------------
 
-The basic approach for OSX installation is the same as for Linux--install python dependencies from a package manager (such as homebrew), and then grab the ACQ4 source from git, pypi, or acq4.org. However, the availability of the correct packages and versions is often a confounding issue.
+The basic approach for OSX installation is the same as for Linux: install python dependencies from a package manager (such as homebrew), and then grab the ACQ4 source from git, pypi, or acq4.org. However, the availability of the correct packages and versions is often a confounding issue.
 
 (detailed instructions coming soon)
