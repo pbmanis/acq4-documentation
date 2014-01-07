@@ -12,10 +12,11 @@ Contents:
     installation
     configuration
     coordinateSystem
+    dataManagement
+    userInterface/index
     _capabilities
     modules/index
     devices/index
-    dataManagement
     _analysis/index
     tutorials/index
 

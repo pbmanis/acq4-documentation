@@ -93,6 +93,8 @@ Buttons:
 * **Stop Single** Immediately aborts the currently running task. Data for this task may be incompletely stored.
 
 
+.. _userModulesTaskRunnerSequences:
+
 Sequence Dock
 -------------
 
