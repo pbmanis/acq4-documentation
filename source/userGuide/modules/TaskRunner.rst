@@ -67,6 +67,8 @@ The loader dock is used to load previously saved tasks, create new tasks and sav
 *To delete a task:* Select the task and press the "Delete" button twice (after one click, the button text changes to "Really?").
 
 
+.. _userModulesTaskRunnerSettings:
+
 Task settings dock
 ------------------
 

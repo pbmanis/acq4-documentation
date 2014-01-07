@@ -72,6 +72,6 @@ To start ACQ4, run::
 OSX Installation
 ----------------
 
-The basic approach for OSX installation is the same as for Linux: install python dependencies from a package manager (such as homebrew), and then grab the ACQ4 source from git, pypi, or acq4.org. However, the availability of the correct packages and versions is often a confounding issue.
+The basic approach for OSX installation is the same as for Linux: install python dependencies from a package manager (such as `MacPorts <http://www.macports.org>`_ or `Homebrew <http://brew.sh>`_), and then grab the ACQ4 source from git, pypi, or acq4.org. However, the availability of the correct packages and versions is often a confounding issue. In some cases, it may be necessary to compile packages from source.
 
 (detailed instructions coming soon)

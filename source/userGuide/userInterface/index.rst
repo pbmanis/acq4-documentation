@@ -1,3 +1,5 @@
+.. _userInterfaces:
+
 User interface elements
 =======================
 

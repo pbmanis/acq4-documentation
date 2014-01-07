@@ -84,6 +84,10 @@ Manager Interface
 Task Runner Interface
 ---------------------
 
+The :ref:`Task Runner interface <userModulesTaskRunnerDevices>` for DAQGeneric devices includes one plot area for each channel and a :ref:`function generator <userInterfacesFunctionGenerator>` for each output channel. 
+
+[note that holding value is added to output waveform after being built by function generator]
+
     .. figure:: images/DAQGenericDevices/PMT_TaskInterface.png
 
     
