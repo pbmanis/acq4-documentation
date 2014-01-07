@@ -7,8 +7,7 @@ The Data Manager module allows the user to browse, view, and export data, view e
 
 For large studies, keeping data properly annotated and organized consistently is both essential and time consuming. The Data Manager encourages consistent, hierarchical organization of data by allowing the user to define a set of directory types, each having its own set of meta-data fields. These fields may be configured by the user at the beginning of a series of experiments to encourage the user to store and annotate data with a consistent organization. During an experiment, the user simply indicates key transitions such as placing a new sample on the microscope or patching a new cell. The data manager uses these transitions to construct a hierarchy of directories which organize the experimental data and prompt the user to supply the necessary meta-data. For more information on this topic, see the :ref:`data organization tutorial <userTutorialsDataOrganization>`.
     
-.. figure:: images/dataManager.png
-    :align: center
+    .. figure:: images/dataManager.png
     
 
 
@@ -65,8 +64,7 @@ Annotations
 
 Each folder type defines a specific set of metadata fields which should be automatically added to the folder upon creation. After creating a folder, the **Info** tab in the Data Manager module can be used to access and edit this metadata.
 
-.. figure:: images/dataManagerFolderInfo.png
-    :align: center
+    .. figure:: images/dataManagerFolderInfo.png
 
 In addition, *all* files are automatically given a "Notes" field which may be used to provide annotations. Individual modules are also free to add extra metadata fields to any files or folders. 
 

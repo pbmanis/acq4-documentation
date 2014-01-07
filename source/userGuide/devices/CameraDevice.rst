@@ -87,8 +87,7 @@ The :ref:`Manager user interface <userModulesManagerDevices>` for cameras typica
 * **binning** the number of sensor pixels that should be binned together to produce one output pixel. 
 * **region** sets the region of interest on the sensor. Using a smaller region can result in faster frame transfer from the camera.
 
-.. figure:: images/Camera_ManagerInterface.png
-    :align: center
+    .. figure:: images/Camera_ManagerInterface.png
     
 Each camera driver implements extra parameters depending on the features available on the camera.
 
@@ -97,5 +96,4 @@ Each camera driver implements extra parameters depending on the features availab
 Task Runner Interface
 ---------------------
 
-.. figure:: images/Camera_TaskInterface.png
-    :align: center
+    .. figure:: images/Camera_TaskInterface.png

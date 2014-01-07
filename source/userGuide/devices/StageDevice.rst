@@ -24,8 +24,7 @@ Configuration Options
 Manager Interface
 -----------------
 
-.. figure:: images/Stage_ManagerInterface.png
-    :align: center
+    .. figure:: images/Stage_ManagerInterface.png
 
 
 Task Runner Interface

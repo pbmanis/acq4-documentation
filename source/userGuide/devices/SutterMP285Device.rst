@@ -30,8 +30,7 @@ Example configuration:
 Manager Interface
 -----------------
 
-.. figure:: images/MP285_ManagerInterface.png
-    :align: center
+    .. figure:: images/MP285_ManagerInterface.png
 
 
 Task Runner Interface

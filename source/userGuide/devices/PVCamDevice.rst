@@ -46,8 +46,7 @@ Photometrics cameras support all features provided by the basic Camera device cl
 Manager Interface
 -----------------
 
-.. figure:: images/Camera_ManagerInterface.png
-    :align: center
+    .. figure:: images/Camera_ManagerInterface.png
 
 
 Task Runner Interface

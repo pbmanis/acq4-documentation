@@ -5,8 +5,7 @@ The Task Runner module
 
 The Task Runner is a customizable interface to ACQ4's task execution capabilities. It allows the user to interactively design and execute a wide range of multi-device tasks including basic patch-clamp stimulation and recording, laser scanning imaging and photostimulation, synchronized multichannel recordings, and complex stimulation paradigms. In this context, the word “task” is used to describe a single, coordinated action to be taken by multiple devices in synchrony. Typically a task involves a short period of recording from electrode amplifiers, cameras, photomultiplier tubes, and other analog or digital channel devices. Arbitrary waveforms may be defined to control stimulation devices, scanning mirrors, and triggering behavior.
 
-.. figure:: images/taskRunner2.png
-    :align: center
+    .. figure:: images/taskRunner2.png
 
     Screen capture of the Task Runner module showing a calcium imaging task with the docks rearranged. The Task Settings and Sequence Settings docks now appear on the left edge, and the Loader Dock is currently hidden beneath the Task Settings dock. Three device control docks are arranged to make optimal use of the available screen space.
 
@@ -43,8 +42,7 @@ The user interface of the Task Runner is organized into 'docks' that may be resi
 #. A sequence settings dock that allows to execute tasks repeatedly while varying one or more parameters of the task.
 #. An online analysis dock allowing the inclusion of analysis modules in the task.
 
-.. figure:: images/taskRunnerInit.png
-    :align: center
+    .. figure:: images/taskRunnerInit.png
     
     Screen capture of the Task Runner module immediately after it is loaded.
 
@@ -54,8 +52,7 @@ Loader dock
 
 The loader dock is used to load previously saved tasks, create new tasks and save changes to tasks. The file list on the left shows all of the previously saved tasks. Task configurations are stored in the directory specified by the :ref:`'taskDir' configuration parameter <userModulesTaskRunnerConfiguration>`.
 
-.. figure:: images/taskRunnerLoader.png
-    :align: center
+    .. figure:: images/taskRunnerLoader.png
 
 *To create a new task:* Click the "New" button. Add any devices to the task (using the Task Dock, explained in the next section). Then press either the "Save" or the "Save As..." button. Name the task by double clicking the current name (probably something like task_000) and typing the name you want. Note that the name of the task also determines the name of directories that will be created when storing data acquired by this task.
 
@@ -75,8 +72,7 @@ Task settings dock
 
 The task settings dock shows a list of the devices that may be included in the task as well as general timing settings for the task. Buttons at the bottom of the dock provide control of task execution.
 
-.. figure:: images/taskRunnerDevices.png
-    :align: center
+    .. figure:: images/taskRunnerDevices.png
 
 *Selecting devices:* To include a device in the task, check the box next to the device. For each device that is checked, the Task interface for that device will appear in the lower space of the window. The behavior of the task interface for each device is described in :ref:`the device documentation <userDevices>`. Any number of devices may be included in the task. Docks may be rearranged and stacked by dragging their title bars.
 
@@ -100,8 +96,7 @@ Sequence Dock
 
 Once a stimulation/recording task is designed, it is common to repeat that task mutiple times while varying one or more parameters of the task. Each device dock will have its own capabilities for specifying parameters to vary. Any sequence parameters in use will be displayed in the parameter list in this dock. 
 
-.. figure:: images/taskRunnerSequence.png
-    :align: center
+    .. figure:: images/taskRunnerSequence.png
 
 If there are multiple sequence parameters, then executing the sequence will iterate over a multi-dimensional parameter space. The order in which parameters are iterated is defined by the order of their appearance in the parameter list; these may be dragged to modify their order. 
 

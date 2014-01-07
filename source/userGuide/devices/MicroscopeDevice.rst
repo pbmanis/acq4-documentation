@@ -50,8 +50,7 @@ objective lens currently in use.
 Manager Interface
 -----------------
 
-.. figure:: images/Microscope_ManagerInterface.png
-    :align: center
+    .. figure:: images/Microscope_ManagerInterface.png
 
 Task Runner Interface
 ---------------------

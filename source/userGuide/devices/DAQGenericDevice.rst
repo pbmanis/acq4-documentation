@@ -78,16 +78,13 @@ Example configuration for a calibrated photodiode:
 Manager Interface
 -----------------
 
-.. figure:: images/DAQGenericDevices/DAQGeneric_ManagerInterface.png
-    :align: center
+    .. figure:: images/DAQGenericDevices/DAQGeneric_ManagerInterface.png
 
 
 Task Runner Interface
 ---------------------
 
-.. figure:: images/DAQGenericDevices/PMT_TaskInterface.png
-    :align: center
+    .. figure:: images/DAQGenericDevices/PMT_TaskInterface.png
 
     
-.. figure:: images/DAQGenericDevices/Stim0_TaskInterface.png
-    :align: center
+    .. figure:: images/DAQGenericDevices/Stim0_TaskInterface.png

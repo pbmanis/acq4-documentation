@@ -60,8 +60,7 @@ The Laser Manager interface allows the user to control the state of the laser an
 
 If the hardware is configured with a power indicator, the current laser power is displayed. Each time the laser power is measured, the estimated power at the sample plane is calculated using the attenuation measurement for the current optical pathway. In the case of power fluctuation, the laser device can be setup up to alert the user and raise a warning when starting tasks if the laser power is outside the desired range. 
 
-.. figure:: images/LaserUV_ManagerInterface.png
-    :align: center
+    .. figure:: images/LaserUV_ManagerInterface.png
 
 The laser device keeps a set of attenuation factors for each optical path. To calibrate the attenuation factors, the user must place a power meter or photodiode under the microscope objective. If there are multiple lasers or objective lenses, one calibration must be made for each combination. Calibration parameters include:
 
@@ -81,6 +80,5 @@ When calibrate is clicked, the Laser Manager interface runs an automatic calibra
 Task Runner Interface
 ---------------------
 
-.. figure:: images/LaserUV_TaskInterface.png
-    :align: center
+    .. figure:: images/LaserUV_TaskInterface.png
 

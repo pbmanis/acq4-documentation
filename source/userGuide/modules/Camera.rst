@@ -5,8 +5,7 @@ The Camera Module
 
 The Camera module provides a live video feed from one or more imaging devices and also serves as a visual representation of the global coordinate system for photostimulation and laser imaging controls. It may be used to record single frames or to stream video to disk alongside any available metadata including the imaging device settings in use, optical train state (such as which objective lens is in use), and the coordinate transformation needed to determine the original location and scale of the image.
 
-.. figure:: images/camera.png
-    :align: center
+    .. figure:: images/camera.png
 
 The Camera module also provides image processing features helpful for enhancing image contrast for cell patching and calcium imaging. For patching, the module's background subtraction features remove optical artifacts and provide enhanced contrast by flattening the illumination gradient across the image. For experiments using calcium imaging (or other fluorescent indicators), the module provides background subtraction with a continuously-updating background. This acts as a high-pass filter, allowing active fluorescence signals to be quickly identified. Additionally, the module will plot the intensity over time of a region of interest, allowing a local fluorescence signal to be monitored by the experimenter. 
 
@@ -30,8 +29,7 @@ Recording dock
 
 The Recording dock contains basic controls for starting image acquisition, storing images, and copying images to the background of the viewing area.
 
-.. figure:: images/cameraRecordingDock.png
-    :align: center
+    .. figure:: images/cameraRecordingDock.png
     
 * **Acquire Frame** Start the imaging device, capture a single frame, then stop. 
 * **Acquire Video** Start the imaging device and continuously display frames as they arrive.
@@ -46,8 +44,7 @@ Device control dock
 
 The device control dock contains device-specific controls for configuring the device. Most cameras implement a simple, standard interface:
 
-.. figure:: images/cameraDeviceControlDock.png
-    :align: center
+    .. figure:: images/cameraDeviceControlDock.png
 
 * **Binning** sets the pixel binning used by the camera.
 * **Exposure** sets the frame exposure time used by the camera.
@@ -60,8 +57,7 @@ Display control dock
 
 The display control dock determines how the values recorded by the camera (usually 16-bit integer) are converted into 32-bit RGBA image colors for display. These controls do *not* affect the data that is stored to disk.
 
-.. figure:: images/cameraDisplayDock.png
-    :align: center
+    .. figure:: images/cameraDisplayDock.png
     
 * **Histogram/Gradient** This control is used to
     #. Display a histogram of values collected from the imaging device
@@ -81,8 +77,7 @@ Background subtraction dock
 
 Background subtraction is used to improve the contrast (either spatial or temporal) of some aspect of the displayed image. These controls affect only the displayed image, and *not* the data that is stored to disk. It may be used to correct uneven illumination, remove optical or camera sensor artifacts, or to make time-varying signals in the video more apparent. Use of background subtraction is described in the :ref:`patching tutorial <userTutorialsPatching>` and the :ref:`calcium imaging tutorial <userTutorialsCalciumImaging>`.
 
-.. figure:: images/cameraBackgroundSubDock.png
-    :align: center
+    .. figure:: images/cameraBackgroundSubDock.png
 
 * **Collect Background** When clicked, this causes the camera module to collect frames for the specified time, then store the average of those frames as the background frame. (Note that the camera must already be acquiring)
 * **Continuous Average** When checked, background frames are continuously integrated into the averaged background frame, and the time specification instead controls the approximate integration period for this process.

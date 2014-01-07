@@ -60,8 +60,7 @@ This process is somewhat complex and requires that the user ensure the hardware 
 
 To achieve these requirements, it is common to configure the camera to use binning and to operate over a restricted region of interest. When the camera is configured with all appropriate settings, click the "Store Camera Config" button in the manager interface. All calibrations from then on will load these camera settings before starting and restore the original settings afterward.
 
-.. figure:: images/Scanner_ManagerInterface.png
-    :align: center
+    .. figure:: images/Scanner_ManagerInterface.png
 
 When all hardware is configured correctly, do the following to start a calibration:
 
@@ -124,13 +123,11 @@ You can also add a Point, which will add a single stimulation point to the proto
 
 You can add as many grids and points to a protocol sequence as you like. If you do not want to use a grid or point during a particular protocol sequence, you can either uncheck it in the Position Control Items list (so that it will be available in the future), or you can delete it by right-clicking it in the Position Control Items list and choosing Remove. 
 
-.. figure:: images/Scanner(withStimulationGrid)_TaskInterface.png
-    :align: center
+    .. figure:: images/Scanner(withStimulationGrid)_TaskInterface.png
 
 Active target points will appear in white by default.
 
-.. figure:: images/Scanner(withStimulationGrid,CameraModule)_TaskInterface.png
-    :align: center
+    .. figure:: images/Scanner(withStimulationGrid,CameraModule)_TaskInterface.png
 
 If you want a grid (perhaps over the area around a cell) but have an area that you don't want to stimulate (for example where an electrode is over the slice) you can add an Occlusion. You can adjust the location of the corners of the occlusion by dragging any of the corner handles, and you can translate the occlusion by clicking and dragging it by the middle. Any points whose centers fall within the occlusion will be removed from the target list (and appear in dark grey in the camera window). 
 
@@ -138,9 +135,7 @@ If you want a grid (perhaps over the area around a cell) but have an area that y
 Defining Scan Programs
 ++++++++++++++++++++++
 
-.. figure:: images/Scanner(withProgramControls)_TaskInterface.png
-    :align: center
+    .. figure:: images/Scanner(withProgramControls)_TaskInterface.png
 
 
-.. figure:: images/Scanner(withProgramControls,CameraModule)_TaskInterface.png
-    :align: center
+    .. figure:: images/Scanner(withProgramControls,CameraModule)_TaskInterface.png
