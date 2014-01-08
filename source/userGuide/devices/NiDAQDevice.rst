@@ -5,6 +5,8 @@ NiDAQ Devices
 
 National Instruments data acquisition devices are often the central hub of control and synchronization in experiments run by ACQ4. Any devices which make use of the NI DAQmx library should work. However, this has only been tested with E- and M-series boards. The PCI-6259 is a good board with 4 analog outputs that supports most current uses for ACQ4.
 
+.. _userDevicesNiDAQConfiguration:
+    
 Configuration Options
 ---------------------
 
@@ -16,15 +18,17 @@ Configuration for this device is very simple. Note that a single 'NiDAQ' device 
         driver: 'NiDAQ'
         config:
             # Specifies the default mode to use for all AI ports.
-            # Options are 'RSE', 'NRSE', and 'DIFF'
-            defaultAIMode: 'NRSE'
+            # Options are 'rse', 'nrse', and 'diff'
+            defaultAIMode: 'nrse'
 
 The supported configuration parameters are:
     
 * **driver** must be 'NiDAQ'
 * **config** contains optional device-specific configuration options:
-    * **defaultAIMode** specifies the default mode to use for all AI ports. Options are 'RSE', 'NRSE', and 'DIFF'.
+    * **defaultAIMode** specifies the default mode to use for all AI ports. Options are 'rse', 'nrse', and 'diff'. These options are discussed in the National Instruments documentation.
     * **mock** specifies whether this device should connect to the actual DAQmx system, or to a simulated DAQ. The value must be True or False (without quotes). Setting ``mock: True`` allows this device to be used as the DAQ for other simulated devices such as :ref:`MockClamp <userDevicesMockClamp>` and :ref:`MockCamera <userDevicesMockCamera>`.
+
+.. _userDevicesNiDAQTaskInterface:
 
 TaskRunner Interface
 --------------------
