@@ -40,6 +40,8 @@ Note: If the exposure signal from the camera is connected to both DI and PFI por
 This is because the PFI ports have very low impedance when unused.
 
 
+.. _userDevicesCameraConfiguration:
+
 Configuration Options
 ---------------------
 

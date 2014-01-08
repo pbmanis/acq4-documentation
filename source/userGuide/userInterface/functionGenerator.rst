@@ -77,15 +77,15 @@ In the context of the :ref:`Task Runner sequencing system <userModulesTaskRunner
 Advanced mode
 -------------
 
-Clicking the **Advanced** button causes the user interface to display a text box in which a python expression may be written. If a waveform was already specified in simple mode, then clicking **Advanced** will automatically generate an equivalent function (but note that the translation does not work in the opposite direction; changes made in advanced mode will not carry over when switching back to simple mode).
+Clicking the **Advanced** button causes the user interface to display a text box in which a python expression or statements may be written. If a waveform was already specified in simple mode, then clicking **Advanced** will automatically generate an equivalent function (but note that the translation does not work in the opposite direction; changes made in advanced mode will not carry over when switching back to simple mode).
 
     .. figure:: images/functionGenerator4.png
 
-The Python expression supplied must evaluate to a numpy array with the correct number of samples. The values in the array must always be expressed as *unscaled* units (eg. amperes instead of nano- or picoamperes). This is done to avoid any ambiguity about the required scaling in different contexts. The environment for evaluating the function is defined as follows:
-    
-1. Global variables ``nPts`` and ``rate`` are defined.
+If a Python expression is supplied, it must evaluate to a `NumPy array <http://docs.scipy.org/doc/numpy-1.8.0/reference/arrays.html>`_ with the correct number of samples. Alternatively, multiple Python statements may be given, ending in a return statement that returns the output array. The values in the array must always be expressed as *unscaled* units (eg. amperes instead of nano- or picoamperes). This is done to avoid any ambiguity about the required scaling in different contexts. The environment for evaluating the function is defined as follows:
+
+1. Global variables ``nPts`` and ``rate`` are defined indicating the required number of points and sample rate.
 2. ACQ4's :ref:`unit symbols <devUnitSymbols>` are imported into the global namespace, allowing the code to be written unambiguously with more 'naturally' scaled values.
-3. ``from numpy import *`` is run at the global namespace and provides a large collection of array and numerical functions.
+3. NumPy is imported as 'np' in the global namespace. This provides a large collection of array and numerical functions.
 4. Several convenience functions are defined that simplify the construction of common waveform components:
     
    * **steps**(times, values, [base=0.0])
@@ -99,3 +99,21 @@ The Python expression supplied must evaluate to a numpy array with the correct n
 
 The **Add Sequence Parameter** button creates a new global variable which may be used in the function. In the example figure above, the ``Pulse_amplitude`` variable is automatically sequenced from 1 mV to 100 mV in 10 logarithmically-spaced steps. Specifying the sequence values to use works almost exactly the same as described above for **simple mode**. The only major difference is that the values entered for each parameter are also evaluated as python expressions.
 
+Example advanced mode functions
+-------------------------------
+
+Square pulse waveform using the built-in ``pulse`` function::
+    
+    pulse(times=10*ms, widths=5*ms, values=-10*mV)
+
+The same square pulse waveform, done without the built-in ``pulse`` function::
+    
+    data = np.zeros(nPts)
+    start = 10*ms * rate
+    stop = start + 5*ms * rate
+    data[start:stop] = -10*mV
+    return data
+
+Load waveform from binary data file::
+    
+    np.fromfile('stim.dat', dtype=np.float32)

@@ -34,6 +34,8 @@ A *module* is a single, independently functioning user interface. Each module ha
 * Task Runner - the workhorse for designing and running tasks
 * Data Manager - for organizing and browsing data, also the access point for analysis modules [link]
 
+.. _userPrinciplesTasks:
+
 Tasks
 -----
 
