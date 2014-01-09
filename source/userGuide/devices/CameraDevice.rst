@@ -80,6 +80,8 @@ The following is an example camera configuration:
             device: 'DAQ'
             channel: '/Dev1/port0/line1'
             type: 'do'
+        defaults:
+            exposure: 10*ms
     
 The configuration parameters common to all camera types are:
 
@@ -89,6 +91,7 @@ The configuration parameters common to all camera types are:
     * **triggerOutChannel**
     * **triggerInChannel**
   These connections are :ref:`described above <userDevicesCameraHardware>`.
+* **defaults** contains one or more default parameter values that are used to configure the camera when ACQ4 starts. The parameters available for your camera can be found in the Manager interface described below.
 
 .. _userDevicesCameraManager:
 
