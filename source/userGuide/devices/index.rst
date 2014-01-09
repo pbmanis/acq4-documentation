@@ -3,6 +3,8 @@
 Devices
 =======
 
+ACQ4 has extensible support for a wide variety of device types:
+
 .. toctree::
     :maxdepth: 2
     
@@ -16,5 +18,5 @@ Devices
     MicroscopeDevice
     TriggerDevice
     DIOSwitchDevice
-    
+    Optomech
     
