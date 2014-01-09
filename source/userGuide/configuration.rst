@@ -38,13 +38,15 @@ Values may also contain nested lists of name:value pairs:
 ::
     
     Camera:
-        config:
-            serial: 'PCICamera0'
-            scopeDevice: 'Microscope'
-            scaleFactor: (1.0, 1.0)
         driver: 'PVCam'
+        serial: 'PCICamera0'
+        parentDevice: 'Microscope'
+        exposeChannel:                  # Channel for recording expose signal
+            device: 'DAQ'
+            channel: '/Dev1/port0/line0'
+            type: 'di'
 
-In this example, we have Camera.driver = 'PVCam', Camera.config.serial = 'PCICamera0', etc. This syntax allows the creation of arbitrarily complex hierarchies of configuration data. *Note that each nested level must have the same amount of indentation for each line*. 
+In this example, we have Camera.driver = 'PVCam', Camera.serial = 'PCICamera0', Camera.exposeChannel.device = 'DAQ', and so on. This syntax allows the creation of arbitrarily complex hierarchies of configuration data. *Note that each nested level must have the same number of indentation spaces for each line*.
 
 Since this configuration tree can become quite large and complex, it is often useful to break off the larger branches and move them to a file of their own:
     
@@ -66,7 +68,7 @@ Further notes about this syntax:
 Configuration Structure
 -----------------------
 
-When ACQ4 first starts, it reads a single configuration from **config/default.cfg**  (it is possible to override this with the -c flag). The structure of this file should look like:
+When ACQ4 first starts, it searches a few default locations for a file named 'default.cfg' (it is possible to override this with the ``-c`` flag). The structure of this file should look like:
     
 ::
     
@@ -141,10 +143,9 @@ The format for defining a device is:
     
     UniqueName:
         driver: "deviceType"
-        config:
-            ...
+        ...
             
-Here, *deviceType* refers to one of the devices defined in the directory **lib/devices** (examples: NiDAQ, MultiClamp, Microscope). The contents of *config* will depend on the device, and are described in the documentation for that device type (see :ref:`userDevices`). Refer to the example configurations in **config/backups**.
+Here, *deviceType* refers to one of the device types defined in the directory **acq4/devices** (examples: NiDAQ, MultiClamp, Microscope). Any further options will depend on the device, and are described in the documentation for that device type (see :ref:`userDevices`). Refer to the example configuration in **acq4/config/example**.
 
 
 .. _userConfigurationFolderTypes:

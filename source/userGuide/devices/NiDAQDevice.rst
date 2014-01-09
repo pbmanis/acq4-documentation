@@ -16,17 +16,14 @@ Configuration for this device is very simple. Note that a single 'NiDAQ' device 
     
     DAQ:  # The name of this device (will be referenced in the configs of other devices)
         driver: 'NiDAQ'
-        config:
-            # Specifies the default mode to use for all AI ports.
-            # Options are 'rse', 'nrse', and 'diff'
-            defaultAIMode: 'nrse'
+        defaultAIMode: 'nrse'
+        mock: False
 
 The supported configuration parameters are:
     
 * **driver** must be 'NiDAQ'
-* **config** contains optional device-specific configuration options:
-    * **defaultAIMode** specifies the default mode to use for all AI ports. Options are 'rse', 'nrse', and 'diff'. These options are discussed in the National Instruments documentation.
-    * **mock** specifies whether this device should connect to the actual DAQmx system, or to a simulated DAQ. The value must be True or False (without quotes). Setting ``mock: True`` allows this device to be used as the DAQ for other simulated devices such as :ref:`MockClamp <userDevicesMockClamp>` and :ref:`MockCamera <userDevicesMockCamera>`.
+* **defaultAIMode** specifies the default mode to use for all AI ports. Options are 'rse', 'nrse', and 'diff'. These options are discussed in the National Instruments documentation.
+* **mock** specifies whether this device should connect to the actual DAQmx system, or to a simulated DAQ. The value must be True or False (without quotes). Setting ``mock: True`` allows this device to be used as the DAQ for other simulated devices such as :ref:`MockClamp <userDevicesMockClamp>` and :ref:`MockCamera <userDevicesMockCamera>`.
 
 .. _userDevicesNiDAQTaskInterface:
 

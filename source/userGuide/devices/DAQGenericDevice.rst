@@ -57,17 +57,16 @@ Example configuration for controlling a laser Q-switch and shutter via two digit
 
     LaserControl:
         driver: 'DAQGeneric'
-        config:
-            shutter:
-                device: 'DAQ'
-                channel: '/Dev1/line30'
-                type: 'do'
-                holding: 0
-            qSwitch:
-                device: 'DAQ'
-                channel: '/Dev1/line29'
-                type: 'do'
-                holding: 0
+        shutter:
+            device: 'DAQ'
+            channel: '/Dev1/line30'
+            type: 'do'
+            holding: 0
+        qSwitch:
+            device: 'DAQ'
+            channel: '/Dev1/line29'
+            type: 'do'
+            holding: 0
     
 .. _userDevicesDAQGenericAxoProbeExample:
 
@@ -77,26 +76,25 @@ Example AxoProbe 1A configuration:
 
     AxoProbe1A:
         driver: 'DAQGeneric'
-        config:
-            Command:
-                device: 'DAQ' 
-                channel: '/Dev1/ao0'
-                type: 'ao'
-                units: u'A' 
-                scale: (1*V)/(2*nA) ## scale is for headstage H = 0.1L, I = 20H nA/V = 2nA/V : 1V/2nA
-                userScale: 1*pA  ## tells scale for output to be in units of pA
-            ScaledSignalV:
-                device: 'DAQ' 
-                channel: '/Dev1/ai3'
-                type: 'ai'
-                units: u'V'
-                scale: 10 ## net gain is fixed at 10 (if f1 switch is set to 10V1): 1V/0.1V
-            ScaledSignalI:
-                device: 'DAQ' 
-                channel: '/Dev1/ai4'
-                type: 'ai'
-                units: u'A'
-                scale: (1*V)/(10*nA) ## scale is H = 0.1, gain = 10/H mV/nA = 100 mV/nA: 1V/10nA
+        Command:
+            device: 'DAQ' 
+            channel: '/Dev1/ao0'
+            type: 'ao'
+            units: u'A' 
+            scale: (1*V)/(2*nA) ## scale is for headstage H = 0.1L, I = 20H nA/V = 2nA/V : 1V/2nA
+            userScale: 1*pA  ## tells scale for output to be in units of pA
+        ScaledSignalV:
+            device: 'DAQ' 
+            channel: '/Dev1/ai3'
+            type: 'ai'
+            units: u'V'
+            scale: 10 ## net gain is fixed at 10 (if f1 switch is set to 10V1): 1V/0.1V
+        ScaledSignalI:
+            device: 'DAQ' 
+            channel: '/Dev1/ai4'
+            type: 'ai'
+            units: u'A'
+            scale: (1*V)/(10*nA) ## scale is H = 0.1, gain = 10/H mV/nA = 100 mV/nA: 1V/10nA
 
 Example configuration for a calibrated photodiode:
     
@@ -104,16 +102,15 @@ Example configuration for a calibrated photodiode:
     
     Photodiode-UV:
         driver: 'DAQGeneric'
-        config:
-            Photodiode:
-                device: 'DAQ'
-                channel: '/Dev1/ai7'
-                type: 'ai'
-                scale: 49.1*mW/V  ## calibrated 2011.11.09
-                offset: 0.0*mV
-                units: 'W'
-                settlingTime: 2*ms
-                measurementTime: 50*ms
+        Photodiode:
+            device: 'DAQ'
+            channel: '/Dev1/ai7'
+            type: 'ai'
+            scale: 49.1*mW/V  ## calibrated 2011.11.09
+            offset: 0.0*mV
+            units: 'W'
+            settlingTime: 2*ms
+            measurementTime: 50*ms
     
 
 
