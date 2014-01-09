@@ -51,3 +51,21 @@ Several post-processing options are available as well. These only affect the dat
 * **Denoise** allows to select from a list of filters that remove noisy outliers.
 * **Filter** allows to select from a list of high- or low-pass filters (Bessel or Butterworth)
 * **Downsample** causes the data returned to be downsampled by either averaging groups of N samples (in the case of analog signals) or by sub-sampling every Nth sample (in the case of digital signals). For systems with large amounts of high-frequency noise, it is beneficial to oversample the signal (the sample rate must be more than twice the noise frequency), then downsample back to a reasonable sample rate, possibly in conjunction with a low-pass filter.
+
+
+.. _userDevicesNiDAQStorage:
+
+Stored data format
+------------------
+
+NiDAQ devices do not directly store data to disk. However, they do generate a standard metadata structure describing the device configuration whenever a Task is executed. Most devices that make use of the DAQ will opt to store this metadata structure along with any data they write to disk. The structure follows:
+    
+* **numPts**: integer number of samples in the array (after downsampling; originally recorded numPts*downsampling)
+* **rate**: sample rate of the array data (also after downsampling; original rate was rate*downsampling)
+* **holding**: the output value assigned to the channel after the task completed
+* **startTime**: the timestamp (seconds since unix time epoch) at the beginning of the task
+* **type**: 'ai' | 'ao' | 'di' | 'do'
+* **downsampling**: downsampling factor applied to the data after it was collected
+* **filterMethod**: The filtering method that was applied during post-processing, if any.
+    * Other filtering parameters depend on filter type
+* **denoiseMethod**: The denoise method that was applied during post-processing, if any.

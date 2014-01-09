@@ -117,3 +117,15 @@ The same square pulse waveform, done without the built-in ``pulse`` function::
 Load waveform from binary data file::
     
     np.fromfile('stim.dat', dtype=np.float32)
+
+.. _userInterfacesFunctionGeneratorStorage:
+
+Stored data format
+------------------
+
+Function generators create a standard metadata format that describes all of the parameters it uses when constructing the output waveform. Devices and modules that store data based on a function generator will usually store this metadata structure as well. The structure follows:
+    
+* **stimuli**: A hierarchy of parameters describing each of the simple-mode components that constructed the complete waveform, including the names of the components, their configuration parameters, and any sequencing settings.
+* **function**: The python code that was used to generate the waveform. 
+* **params**: The sequence parameters that were used with the Python function.
+* **advancedMode**: (bool) whether the function generator was being used in **advanced mode**.

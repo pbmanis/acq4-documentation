@@ -1,4 +1,4 @@
-.. _userInterfacesPlots:
+.. _userInterfacesGraphics:
 
 Plots and interactive views
 ===========================
