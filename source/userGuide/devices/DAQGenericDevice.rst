@@ -9,7 +9,7 @@ Any device that simply requires direct access to one or more DAQ channels may be
 * TTL-driven devices such as shutters and solenoid valves.
 * Analog output devices such as LEDs and stimulating electrodes.
 
-DAQGeneric devices may be operated using the :ref:`TaskRunner module <userModuleTaskRunner>` to perform a wide variety of recording and output tasks. Devices that require access to DAQ channels with more advanced or device-specific features are implemented separately (for example, :ref:`patch clamp amplifiers <userDevicesPatchClamp>`, :ref:`galvanometric scan mirrors <userDevicesScanner>`, :ref:`lasers <userDevicesLaser>`, and :ref:`cameras <userDevicesCamera>`), but usually inherit much of their behavior from the DAQGeneric device class.
+DAQGeneric devices may be operated using the :ref:`TaskRunner module <userModulesTaskRunner>` to perform a wide variety of recording and output tasks. Devices that require access to DAQ channels with more advanced or device-specific features are implemented separately (for example, :ref:`patch clamp amplifiers <userDevicesPatchClamp>`, :ref:`galvanometric scan mirrors <userDevicesScanner>`, :ref:`lasers <userDevicesLaser>`, and :ref:`cameras <userDevicesCamera>`), but usually inherit much of their behavior from the DAQGeneric device class.
 
 Configuration Options
 ---------------------

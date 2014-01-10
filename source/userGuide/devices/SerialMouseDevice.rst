@@ -10,9 +10,3 @@ Configuration Options
 ---------------------
 
 
-Manager Interface
------------------
-
-
-Task Runner Interface
----------------------
