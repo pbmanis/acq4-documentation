@@ -29,7 +29,7 @@ It is important when collecting data that includes positioning or transform info
     
     .. figure:: images/microscopeSwitch.png
 
-The state of the DAQ digital input is then polled with a :ref:`Switch device <userDevicesSwitch>` to detect changes in the objective state.
+The state of the DAQ digital input is then polled with a :ref:`Switch device <userDevicesDIOSwitch>` to detect changes in the objective state.
 
 
 Configuration Options
@@ -62,7 +62,7 @@ The supported configuration parameters are:
 
 * **driver** must be 'Microscope'
 * **parentDevice** and **transform**, which define the device's :ref:`optomechanical configuration <userDevicesOptomech>`.
-* **objectiveSwitch** is an optional pair of values (deviceName, switchName) referring to :ref:`a switch device <userDevicesSwitch>` that is used to indicate the currently used slot on a multi-objective microscope.
+* **objectiveSwitch** is an optional pair of values (deviceName, switchName) referring to :ref:`a switch device <userDevicesDIOSwitch>` that is used to indicate the currently used slot on a multi-objective microscope.
 * **objectives** describes the set of objectives that may appear in a microscope. First, there is one numerical key per objective 'slot' in the microscope. Next, each numbered slot contains one or more objective descriptors with the following format::
     
       unique_identifier:

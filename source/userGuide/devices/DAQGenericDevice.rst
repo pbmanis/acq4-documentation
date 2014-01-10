@@ -3,13 +3,18 @@
 Generic DAQ Devices
 ===================
 
-Any device that simply requires direct access to one or more DAQ channels may be configured as a 'DAQGeneric' device. 
+Any device that simply requires direct access to one or more DAQ channels may be configured as a 'DAQGeneric' device. For example, this includes:
 
+* Analog detector devices such as photodiodes, laser power meters, temperature probes, and electrode amplifiers.
+* TTL-driven devices such as shutters and solenoid valves.
+* Analog output devices such as LEDs and stimulating electrodes.
+
+DAQGeneric devices may be operated using the :ref:`TaskRunner module <userModuleTaskRunner>` to perform a wide variety of recording and output tasks. Devices that require access to DAQ channels with more advanced or device-specific features are implemented separately (for example, :ref:`patch clamp amplifiers <userDevicesPatchClamp>`, :ref:`galvanometric scan mirrors <userDevicesScanner>`, :ref:`lasers <userDevicesLaser>`, and :ref:`cameras <userDevicesCamera>`), but usually inherit much of their behavior from the DAQGeneric device class.
 
 Configuration Options
 ---------------------
 
-The basic DAQGeneric device configuration includes one or more channel specifications:
+The basic DAQGeneric :ref:`device configuration <userConfigurationDevices>` includes one or more channel specifications:
 
 
 .. _userDevicesDAQGenericChannelSpecification:
@@ -57,16 +62,17 @@ Example configuration for controlling a laser Q-switch and shutter via two digit
 
     LaserControl:
         driver: 'DAQGeneric'
-        shutter:
-            device: 'DAQ'
-            channel: '/Dev1/line30'
-            type: 'do'
-            holding: 0
-        qSwitch:
-            device: 'DAQ'
-            channel: '/Dev1/line29'
-            type: 'do'
-            holding: 0
+        channels:
+            shutter:
+                device: 'DAQ'
+                channel: '/Dev1/line30'
+                type: 'do'
+                holding: 0
+            qSwitch:
+                device: 'DAQ'
+                channel: '/Dev1/line29'
+                type: 'do'
+                holding: 0
     
 .. _userDevicesDAQGenericAxoProbeExample:
 
@@ -76,25 +82,26 @@ Example AxoProbe 1A configuration:
 
     AxoProbe1A:
         driver: 'DAQGeneric'
-        Command:
-            device: 'DAQ' 
-            channel: '/Dev1/ao0'
-            type: 'ao'
-            units: u'A' 
-            scale: (1*V)/(2*nA) ## scale is for headstage H = 0.1L, I = 20H nA/V = 2nA/V : 1V/2nA
-            userScale: 1*pA  ## tells scale for output to be in units of pA
-        ScaledSignalV:
-            device: 'DAQ' 
-            channel: '/Dev1/ai3'
-            type: 'ai'
-            units: u'V'
-            scale: 10 ## net gain is fixed at 10 (if f1 switch is set to 10V1): 1V/0.1V
-        ScaledSignalI:
-            device: 'DAQ' 
-            channel: '/Dev1/ai4'
-            type: 'ai'
-            units: u'A'
-            scale: (1*V)/(10*nA) ## scale is H = 0.1, gain = 10/H mV/nA = 100 mV/nA: 1V/10nA
+        channels:
+            Command:
+                device: 'DAQ' 
+                channel: '/Dev1/ao0'
+                type: 'ao'
+                units: u'A' 
+                scale: (1*V)/(2*nA) ## scale is for headstage H = 0.1L, I = 20H nA/V = 2nA/V : 1V/2nA
+                userScale: 1*pA  ## tells scale for output to be in units of pA
+            ScaledSignalV:
+                device: 'DAQ' 
+                channel: '/Dev1/ai3'
+                type: 'ai'
+                units: u'V'
+                scale: 10 ## net gain is fixed at 10 (if f1 switch is set to 10V1): 1V/0.1V
+            ScaledSignalI:
+                device: 'DAQ' 
+                channel: '/Dev1/ai4'
+                type: 'ai'
+                units: u'A'
+                scale: (1*V)/(10*nA) ## scale is H = 0.1, gain = 10/H mV/nA = 100 mV/nA: 1V/10nA
 
 Example configuration for a calibrated photodiode:
     
@@ -102,32 +109,38 @@ Example configuration for a calibrated photodiode:
     
     Photodiode-UV:
         driver: 'DAQGeneric'
-        Photodiode:
-            device: 'DAQ'
-            channel: '/Dev1/ai7'
-            type: 'ai'
-            scale: 49.1*mW/V  ## calibrated 2011.11.09
-            offset: 0.0*mV
-            units: 'W'
-            settlingTime: 2*ms
-            measurementTime: 50*ms
+        channels:
+            Photodiode:
+                device: 'DAQ'
+                channel: '/Dev1/ai7'
+                type: 'ai'
+                scale: 49.1*mW/V  ## calibrated 2011.11.09
+                offset: 0.0*mV
+                units: 'W'
+                settlingTime: 2*ms
+                measurementTime: 50*ms
     
 
 
 Manager Interface
 -----------------
 
+The :ref:`Manager user interface <userModulesManagerDevices>` for DAQGeneric devices will contain one control panel for each channel defined on the device.
+
     .. figure:: images/DAQGenericDevices/DAQGeneric_ManagerInterface.png
 
+Output channels have a **Holding** value that indicates the default value of that output when it is not being used in a task. Analog channels display **Scale** and **Offset** parameters as well. By default, each of these is loaded with the value given in the configuration file for the device. Modifying these values will change the behavior of the device while ACQ4 is running, but will not modify the original configuration file. Clicking any of the **Default** buttons will reset that parameter to the value that is defined in the configuration file.
 
 Task Runner Interface
 ---------------------
 
-The :ref:`Task Runner interface <userModulesTaskRunnerSettings>` for DAQGeneric devices includes one plot area for each channel and a :ref:`function generator <userInterfacesFunctionGenerator>` for each output channel. 
+The :ref:`Task Runner interface <userModulesTaskRunnerSettings>` for DAQGeneric devices includes one :ref:`plot area <userInterfacesGraphics>` for each channel That displays either the recorded signal or the generated output waveform for that channel. A **Display** check box controls whether the plot area is visible.
 
-[note that holding value is added to output waveform after being built by function generator]
+Input channels also have a **Record** option which allows recording from the channel to be temporarily disabled, and a **Record initial state** option which causes the input value of the channel to be recorded once before the task and stored as metadata on the task results directory. This is used, for example, to make measurements from temperature probes where it is not necessary to acquire a complete waveform.
+
 
     .. figure:: images/DAQGenericDevices/PMT_TaskInterface.png
 
+Output channels have a :ref:`function generator <userInterfacesFunctionGenerator>` that is used to define the output waveform and sequence parameters. Also included are a **Pre-set** option, which sets the output value on the channel immediately before starting the task, and a **Holding** option, which (if checked) will alter the holding value for the channel after the task has completed. Note that, whether or not **Holding** is checked, the output channel will always be returned to its holding value after the task completes.
     
     .. figure:: images/DAQGenericDevices/Stim0_TaskInterface.png
