@@ -28,28 +28,27 @@ Example configuration:
             
     Laser-UV:                                               ## A QSwitched laser with an external shutter and photodiode
         driver: 'Laser'
-        config: 
-            scope: 'Microscope'
-            parentDevice: 'Microscope'
-            pulseRate: 100*kHz                              ## Laser's pulse rate
-            powerIndicator:                                 ## Here, a we specify a previously defined DAQGeneric device (Photodiode-UV) to
-                                                            ##    use to measure the power at the output of the laser
-                channel: 'Photodiode-UV', 'Photodiode'      ## photocell channel for immediate recalibration
-                rate: 1.2*MHz                               ## sample rate to use when measuring power
-            shutter:
-                device: 'DAQ'
-                channel: '/Dev1/line30'                     ## channel for triggering shutter
-                type: 'do'
-                delay: 10*ms                                ## how long it takes the shutter to fully open
-            qSwitch:
-                device: 'DAQ'
-                channel: '/Dev1/line29'                     ## channel for triggering q-switch
-                type: 'do'
-            wavelength: 355*nm
-            alignmentMode:
-                qSwitch: False                              ## For alignment, shutter is open but QS is off
-                shutter: True
-            defaultPowerMeter: 'NewportMeter'
+        scope: 'Microscope'
+        parentDevice: 'Microscope'
+        pulseRate: 100*kHz                              ## Laser's pulse rate
+        powerIndicator:                                 ## Here, a we specify a previously defined DAQGeneric device (Photodiode-UV) to
+                                                        ##    use to measure the power at the output of the laser
+            channel: 'Photodiode-UV', 'Photodiode'      ## photocell channel for immediate recalibration
+            rate: 1.2*MHz                               ## sample rate to use when measuring power
+        shutter:
+            device: 'DAQ'
+            channel: '/Dev1/line30'                     ## channel for triggering shutter
+            type: 'do'
+            delay: 10*ms                                ## how long it takes the shutter to fully open
+        qSwitch:
+            device: 'DAQ'
+            channel: '/Dev1/line29'                     ## channel for triggering q-switch
+            type: 'do'
+        wavelength: 355*nm
+        alignmentMode:
+            qSwitch: False                              ## For alignment, shutter is open but QS is off
+            shutter: True
+        defaultPowerMeter: 'NewportMeter'
   
   
 

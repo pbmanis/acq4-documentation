@@ -11,7 +11,6 @@ Contents:
     hardware
     installation
     configuration
-    coordinateSystem
     dataManagement
     userInterface/index
     _capabilities

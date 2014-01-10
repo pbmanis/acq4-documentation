@@ -18,13 +18,11 @@ Example configuration for a foot switch connected to a DAQ PFI. The switch can t
     FootSwitch:            # the name "FootSwitch" will appear in the list of 
                            # trigger sources in the NiDAQ TaskRunner interface
         driver: 'Trigger'
-        config:
-            DAQ: '/Dev1/PFI5'
+        DAQ: '/Dev1/PFI5'
   
-
-Manager Interface
------------------
 
 
 Task Runner Interface
 ---------------------
+
+Trigger devices do not implement a TaskRunner interface. However, the :ref:`NiDAQ device task interface <userDevicesNiDAQTaskInterface>` allows to select a trigger device.

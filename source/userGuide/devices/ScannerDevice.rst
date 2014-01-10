@@ -15,22 +15,21 @@ Example scanner configuration:
     
     Scanner:
         driver: 'Scanner'
-        config:
-            parentDevice: 'Microscope'       ## Scanner is rigidly connected to scope, inherits its transformations.
-            calibrationDir: 'config\\ScannerCalibration'
-            XAxis: 
-                device: 'DAQ'
-                channel: '/Dev1/ao2'
-                type: 'ao'
-            YAxis: 
-                device: 'DAQ'
-                channel: '/Dev1/ao3'
-                type: 'ao'
-            defaultCamera: "Camera"
-            defaultLaser: "Laser-UV"
-            commandLimits: -3, 3
-            #offVoltage: 0, -3    ## "off" position when simulating a virtual shutter
-            #shutterLasers: ['Laser-UV']  ## list of lasers for which we should simulate a shutter by default
+        parentDevice: 'Microscope'       ## Scanner is rigidly connected to scope, inherits its transformations.
+        calibrationDir: 'config\\ScannerCalibration'
+        XAxis: 
+            device: 'DAQ'
+            channel: '/Dev1/ao2'
+            type: 'ao'
+        YAxis: 
+            device: 'DAQ'
+            channel: '/Dev1/ao3'
+            type: 'ao'
+        defaultCamera: "Camera"
+        defaultLaser: "Laser-UV"
+        commandLimits: -3, 3
+        #offVoltage: 0, -3    ## "off" position when simulating a virtual shutter
+        #shutterLasers: ['Laser-UV']  ## list of lasers for which we should simulate a shutter by default
 
 
 Manager Interface

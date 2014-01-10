@@ -17,7 +17,7 @@ For example, a motorized stage, microscope, and camera may all be linked optomec
 The end result is that devices in the optomechanical hierarchy generate data that is registered to the physical coordinates of the sample, and this requires no effort from the user during the experiment as long as ACQ4 is able to record positioning information. The structure of this device hierarchy is entirely user-definable, allowing ACQ4 to work with arbitrary device configurations.
 
 Configuring optomechanical devices
-==================================
+----------------------------------
 
 All optomechanical device types (this currently includess cameras, microscopes, stages, and scanners) accept two :ref:`configuration options <userConfigurationDevices>` that define their relationship to the device hierarchy:
     
@@ -27,6 +27,8 @@ All optomechanical device types (this currently includess cameras, microscopes, 
     * **scale**: A list of 2 or 3 values that scale the coordinate system. 
     * **angle**: An angle of rotation (in degrees)
     * **axis**: A vector defining the 3D axis of rotation. By default, this is set to (0, 0, 1); that is, rotation is around the Z-axis unless otherwise specified.
+    
+Each of the transformation parameters is used to construct a matrix ``M = (Scale * Rotate * Translate)`` that maps from the local coordinate system of the device to the local coordinate system of its parent.    
     
 Example configuration for a camera::
     
@@ -42,4 +44,3 @@ Example configuration for a camera::
             angle: 2.3              # Damaged mounting hardware causes the 
                                     # camera to sit at a 2.3 deg angle relative
                                     # to other devices.
-
