@@ -85,6 +85,7 @@ The following is an example camera configuration:
     
 The configuration parameters common to all camera types are:
 
+* **driver** must be one of the available Camera device types (:ref:`QCam <userDevicesQImagingCameras>`, :ref:`PVCam <userDevicesPhotometricsCameras>`, or :ref:`MockCamera <userDevicesMockCamera>`).
 * **parentDevice** and **transform**, which define the camera's :ref:`optomechanical configuration <userDevicesOptomech>`.
 * :ref:`DAQ channel specifications <userDevicesDAQGenericChannelSpecification>` for each of the digital channels that are connected to the DAQ: 
     * **exposeChannel**
