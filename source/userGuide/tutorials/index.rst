@@ -6,7 +6,7 @@ Tutorials
     :maxdepth: 2
     
     PatchCell
-    _RecordIVCurve
+    RecordIVCurve
     DataOrganization
     _CalibrateScanner
     _CalibrateObjectives

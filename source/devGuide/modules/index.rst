@@ -22,8 +22,8 @@ In short, a module is an almost-totally independent program which is launched by
 How to Build a New Module
 -------------------------
 
-#. Create a new python module under lib/modules. This can be a single file or a directory of files; it doesn't matter. 
-#. Create a subclass of lib.modules.Module.Module (I know, it's an absurd name). This should look something like::
+#. Create a new python module under acq4/modules. This can be a single file or a directory of files; it doesn't matter. 
+#. Create a subclass of acq4.modules.Module.Module. This should look something like::
     
     from lib.modules.Module import Module
     
