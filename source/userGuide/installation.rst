@@ -27,6 +27,7 @@ There are two basic methods of installing ACQ4 on windows:
 * Download one of the .exe installers from `www.acq4.org <http://www.acq4.org>`_; these contain a complete python distribution with all of the packages listed below. This is the quickest way to get running if you do not plan on developing new code within ACQ4. To start ACQ4, simply navigate to the entry in the start menu.
 
 * Prepare a complete python distribution. This is preferred if you plan to develop new code within ACQ4. All packages must match the version (2.7) and architecture (32 or 64bit) of the python version to be installed.
+  Note: the MultiClamp Commander software from Molecular Devices currently only runs in 32-bit mode.
 
     * Download and install Python packages in order:
         #. Python 2.7 (http://www.python.org/download)
