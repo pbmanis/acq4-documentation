@@ -22,13 +22,13 @@ You also need to make sure that the drivers for your devices are installed and w
 Windows Installation
 --------------------
 
-There are two basic methods of installing ACQ4 on windows:
+.. There are two basic methods of installing ACQ4 on windows:
     
-* Download one of the .exe installers from `www.acq4.org <http://www.acq4.org>`_; these contain a complete python distribution with all of the packages listed below. This is the quickest way to get running if you do not plan on developing new code within ACQ4. To start ACQ4, simply navigate to the entry in the start menu.
+.. * Download one of the .exe installers from `www.acq4.org <http://www.acq4.org>`_; these contain a complete python distribution with all of the packages listed below. This is the quickest way to get running if you do not plan on developing new code within ACQ4. To start ACQ4, simply navigate to the entry in the start menu.
 
-* Prepare a complete python distribution. This is preferred if you plan to develop new code within ACQ4. All packages must match the version (2.7) and architecture (32 or 64bit) of the python version to be installed.
+.. * Prepare a complete python distribution. This is preferred if you plan to develop new code within ACQ4. All packages must match the version (2.7) and architecture (32 or 64bit) of the python version to be installed.
 
-    * Download and install Python packages in order:
+* Download and install Python packages in order:
         #. Python 2.7 (http://www.python.org/download)
         #. PyQt4 4.10 (http://www.riverbankcomputing.com/software/pyqt/download)
         #. NumPy-MKL 1.7 (http://www.lfd.uci.edu/~gohlke/pythonlibs/#numpy)
@@ -38,11 +38,11 @@ There are two basic methods of installing ACQ4 on windows:
         #. pyserial 2.7 (http://www.lfd.uci.edu/~gohlke/pythonlibs/#pyserial)
         #. PyOpenGL 3.0 (http://www.lfd.uci.edu/~gohlke/pythonlibs/#pyopengl)
         #. PyParsing 2.0 (http://www.lfd.uci.edu/~gohlke/pythonlibs/#pyparsing)
-    * Install git (www.git-scm.com), then clone the acq4 repository::
+* Install git (www.git-scm.com), then clone the acq4 repository::
         
             git cone https://github.com/acq4/acq4.git
             
-    * To start ACQ4, run ``python -m acq4`` from the source directory, or install with ``python setup.py install``
+* To start ACQ4, run ``python -m acq4`` from the source directory, or install with ``python setup.py install``
 
 
 Linux Installation
