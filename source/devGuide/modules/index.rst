@@ -10,7 +10,7 @@ Contents:
     DataManager
     Camera
     Patch
-    ProtocolRunner
+    TaskRunner
     Imager
     Console
 
@@ -22,7 +22,7 @@ In short, a module is an almost-totally independent program which is launched by
 How to Build a New Module
 -------------------------
 
-#. Create a new python module under acq4/modules. This can be a single file or a directory of files; it doesn't matter. 
+#. Create a new python module or package under acq4/modules. This can be a single file or a directory of files; it doesn't matter (but either way it must be *importable*). 
 #. Create a subclass of acq4.modules.Module.Module. This should look something like::
     
     from lib.modules.Module import Module

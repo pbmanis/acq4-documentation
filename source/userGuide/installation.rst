@@ -41,7 +41,7 @@ There are two basic methods of installing ACQ4 on windows:
         #. PyParsing 2.0 (http://www.lfd.uci.edu/~gohlke/pythonlibs/#pyparsing)
     * Install git (www.git-scm.com), then clone the acq4 repository::
         
-            git cone https://github.com/acq4/acq4.git
+            git clone https://github.com/acq4/acq4.git
             
     * To start ACQ4, run ``python -m acq4`` from the source directory, or install with ``python setup.py install``
 
