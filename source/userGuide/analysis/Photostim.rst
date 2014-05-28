@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ===============================
 Photostim Module (Analysis)
 ===============================
@@ -172,7 +171,6 @@ may wish to select the map and change it's Alpha to better blend the two represe
 
 
 
-=======
+=======================
 Photostimulation Mapping
 ========================
->>>>>>> 34fd7f9961086e3ec881be19ddd3ebd8e37d077d
