@@ -1,3 +1,5 @@
+.. _userGuideAnalysisPhotostim:
+
 ===============================
 Photostim Module (Analysis)
 ===============================

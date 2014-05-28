@@ -209,7 +209,7 @@ The *configurations* section allows us to define a set of named modifications to
 In the example above, the three names would appear in the Manager module as loadable configurations. This allows each user to quickly select their storage settings. The settings for each user can be anything that would appear at the top-level configuration. Thus, users can specify their own folder types, preconfigured modules, etc (however devices may not be defined here). 
 
 
-=======
+
 Miscellaneous Options
 '''''''''''''''''''''
 

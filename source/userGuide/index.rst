@@ -16,11 +16,7 @@ Contents:
     _capabilities
     modules/index
     devices/index
-<<<<<<< HEAD
     analysis/index
-=======
-    _analysis/index
->>>>>>> 34fd7f9961086e3ec881be19ddd3ebd8e37d077d
     tutorials/index
 
 
