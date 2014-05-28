@@ -35,7 +35,7 @@ two columns of plots. The left column shows the current traces (top), along with
 has the measured current-voltage relationships for the windows, and the difference plot (top), the holding current during
 the protocol (middle), and the voltage commands as a function of time (bottom).
 
-.. figure:: PSPReversal.png
+.. figure:: images/PSPReversal.png
    :scale: 60 %
    :alt: Reversal Analysis Module Window
 
@@ -45,7 +45,7 @@ the protocol (middle), and the voltage commands as a function of time (bottom).
 Controls
 --------
 
-.. figure:: PSPParameters.png
+.. figure:: images/PSPParameters.png
    :scale: 100 %
    :alt: Reversal Analysis Module Parameters Panel
 
@@ -124,7 +124,7 @@ panel in Figure1), as well as with repeats within the protocol (the protocol in 
 Output
 ------
 
-.. figure:: PSPResults.png
+.. figure:: images/PSPResults.png
    :scale: 100 %
    :alt: Reversal Analysis Results Panel
 
