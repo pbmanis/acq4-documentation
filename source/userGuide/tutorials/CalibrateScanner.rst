@@ -2,6 +2,7 @@
 
 Calibrate Scanning Mirrors
 ==========================
+<<<<<<< HEAD
 
 Overview
 --------
@@ -75,3 +76,5 @@ you cannot ):
 #. Recalibrate using the :ref:`Daily Calibration<userTutorialsCalibrationScannerDailyCalibration>`.
 
 
+=======
+>>>>>>> 34fd7f9961086e3ec881be19ddd3ebd8e37d077d

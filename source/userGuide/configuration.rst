@@ -209,4 +209,21 @@ The *configurations* section allows us to define a set of named modifications to
 In the example above, the three names would appear in the Manager module as loadable configurations. This allows each user to quickly select their storage settings. The settings for each user can be anything that would appear at the top-level configuration. Thus, users can specify their own folder types, preconfigured modules, etc (however devices may not be defined here). 
 
 
+<<<<<<< HEAD
+=======
+Miscellaneous Options
+'''''''''''''''''''''
+
+*defaultCompression* defines the HDF5 compression filter and options used by default. Modules are encouraged to use this default value, but in some cases may specify a different compression filter. Options are:
+    
+    * *'lzf'* - Very fast compression (generally fast enough for video and multichannel acquisition), but the LZF filter is usually not available outside Python. External HDF5 viewers and analysis tools such as MATLAB and Igor will be unable to read these files unless they are re-compressed with a different filter.
+    * *'gzip'* - Slower compression, but generally available everywhere HDF5 is supported. You may also specify a pair of values ('gzip', N), where N is an integer 0-9 specifying the compression level to use. Even at the fastest setting, gzip compression may cause a significant performance decrease while acquiring video or multichannel signals. 
+    * *'szip'* - Faster compression, but patent-encumbered and lacks write support on Windows. 
+    * *None* - No compression. 
+    
+By default, no compression is used due to the shortcomings of each of the available filters.
+
+This option was added in version 0.9.3.
+
+>>>>>>> 34fd7f9961086e3ec881be19ddd3ebd8e37d077d
 
