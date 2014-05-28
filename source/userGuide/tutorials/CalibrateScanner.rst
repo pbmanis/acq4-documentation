@@ -21,6 +21,7 @@ Daily Calibration Steps
 #. Open the :ref:`Camera module<userModulesCamera>`, start the camera, and manually open the laser shutter to make sure the laser
    is in-focus. Fluorescent targets can be made from a piece of yellow laboratory tape (for a blue laser), a red plastic for a multiphoton
    laser, or a piece of nitrocellulose paper soaked in a fluorescent dye, dried, and sandwiched between two small coverslips.
+#. Set Camera to “CLEAR_MODE” = clear pre-exposure, and set binning to 4 (or whatever is needed to get high frame rate, around 30 fps).
 #. If the laser is out of the view of the objective, you may need to adjust the X and Y voltages on the
    Scanner-Raw device in the :ref:`Manager device window<userModulesManagerDevices>` (see step 3 below).
 #. Close the laser shutter, and make confirm that the correct objective is selected in the :ref:`Manager Device window<userModulesManagerDevices>`.
