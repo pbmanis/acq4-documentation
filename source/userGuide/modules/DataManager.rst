@@ -37,6 +37,8 @@ Acquired data storage
 During most data acquisition, modules will not prompt the user for a location to store data in. Instead, modules communicate with the Data Manager, which specifies a current storage directory set previously by the user. Before acquiring any data, the user must select the desired storage folder in the Data Manager, and then click the **Set** button to the right of **Storage Directory**. The current storage directory will be highlighted red.
 
 
+.. _userModulesFolders:
+
 Creating new folders
 --------------------
 

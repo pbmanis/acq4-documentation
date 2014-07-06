@@ -1,3 +1,5 @@
+.. _userGuideAnalysisPhotostim:
+
 ===============================
 Photostim Module (Analysis)
 ===============================
@@ -171,3 +173,6 @@ may wish to select the map and change it's Alpha to better blend the two represe
 
 
 
+=======================
+Photostimulation Mapping
+========================

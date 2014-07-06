@@ -74,4 +74,3 @@ you cannot ):
 #. Remove the target, and check the position of the spot as seen by the camera. If the spot is significantly off-center, then adjust the angle of the dichroic mirror. Do this CAREFULLY since the dichroic can be broken if the angle is pushed too far.
 #. Recalibrate using the :ref:`Daily Calibration<userTutorialsCalibrationScannerDailyCalibration>`.
 
-

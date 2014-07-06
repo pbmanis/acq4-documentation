@@ -27,30 +27,49 @@ noise is introduced into the measurement because the fit trace is essentially no
 
 The basic procedure is to read the data, define the two measurement windows, perform the calculations, and print the results.
 
-The PSPReversal module uses a standard layout, similar to that of the IVCurve module. The left side of the window consists of
-(top) the file structure and protocols, a **"load"** button, a list of loaded protocols, and below this, two tabbed interfaces.
-One interface controls the analysis ("Parameters"), and the other is a read-only text box that holds the results. On the right are
-two columns of plots. The left column shows the current traces (top), along with the "linear region" windows (*red* for baseline,
-*green* for the reference window, and *blue* for the measurement window), and the command traces (bottom). The right column
-has the measured current-voltage relationships for the windows, and the difference plot (top), the holding current during
-the protocol (middle), and the voltage commands as a function of time (bottom).
+The PSPReversal module uses a standard layout, similar to that of the IVCurve module.
 
-.. figure:: PSPReversal.png
+File Loader
+-------------
+Use this tab to pick up the subfolders containing the relevant data sets
+from the directory you have selected
+in the Data Manager. These subfolders will usually be named *slice_000*, etc.
+Open one of the subfolders by clicking on
+the triangle to the left of the name to expand an entry. Repeat this to select cells for
+the slice and date, and for a given cell, to show the
+protocols that were run as well as some of the files (for example, images) that are
+stored in that directory. You can then select a map protocol (single click; you do not
+need to *open* it), and
+click on the *Load File->* button below the File Loader to bring the data into the program.
+When the data is loaded,
+the traces should appear in the *Data* window. If there are no traces, check the log for errors.
+
+.. figure:: images/PSPReversal.png
    :scale: 60 %
    :alt: Reversal Analysis Module Window
 
    Figure 1: The PSP Reversal Analysis Module Window has a file reader (left, top), controls and outputs (left, bottom), and multiple
    plots that show the data, ancillary information, and analysis results.
 
+Plots
+-----
+On the right side of the window you will see
+two columns of plots. The left column shows the current traces (top, *Data*), along with the "linear region" windows (*red* for baseline,
+*green* for the reference window, and *blue* for the measurement window), and the command traces (bottom, also *Data*). The right column
+has the measured current-voltage relationships for the windows (top, *I-V*), the holding current during
+the protocol (middle, labeled *RMP*), and the voltage commands as a function of time (bottom).
+
+
 Controls
 --------
 
-.. figure:: PSPParameters.png
+.. figure:: images/PSPParameters.png
    :scale: 100 %
    :alt: Reversal Analysis Module Parameters Panel
 
    Figure 2: The PSP Reversal Analysis Module Window parameter control Panel.
 
+Below the File Loader is a list of loaded protocols, and below this, two tabbed interfaces. One interface controls the analysis ("Parameters"), and the other is a read-only text box that holds the results.
 The Parameters panel controls the analysis steps. Several of the controls in this panel have been inherited from the IVCurve
 module, and are inactive or should not be used. These include *Seq#1, Seq#2, CMD, Spike Thr (threshold), and IV Command Limits*.
 
@@ -124,7 +143,7 @@ panel in Figure1), as well as with repeats within the protocol (the protocol in 
 Output
 ------
 
-.. figure:: PSPResults.png
+.. figure:: images/PSPResults.png
    :scale: 100 %
    :alt: Reversal Analysis Results Panel
 
